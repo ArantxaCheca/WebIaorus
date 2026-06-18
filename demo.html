@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitar Demo - IAORUS</title>
+<meta name="description" content="Solicita una demo personalizada de IAORUS y descubre cómo nuestro software inteligente puede transformar tu negocio.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="./assets/images/logo_iaorus_white.png" alt="logo_iaorus" style="height:60px;">
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="soluciones.html">Sectores</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="demo.html" class="active btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Solicitar Demo</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Solicitar Demo</h1>
+    <p>Descubre en una sesión personalizada cómo IAORUS puede generar el software que tu empresa necesita.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="demo-form">
+      <div style="text-align:center;margin-bottom:32px;">
+        <span class="section-tag">Personalizada y sin compromiso</span>
+        <p style="margin-top:12px;">Te mostraremos una demo adaptada a tu sector y necesidades. Recibirás además un pack de documentación informativa.</p>
+      </div>
+      <form id="demo-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email corporativo *</label>
+            <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="producto">Producto de interés *</label>
+            <select id="producto" name="producto" required>
+              <option value="">Selecciona un producto</option>
+              <option value="erp">IAORUS ERP (completo)</option>
+              <option value="bp360">IAORUS BP360 (inmobiliario)</option>
+              <option value="gestia">Gest-IA (documentación)</option>
+              <option value="iatask">IATask (producción/asistencia)</option>
+              <option value="rrhh">APP RRHH</option>
+              <option value="accesos">Control de Accesos</option>
+              <option value="web">Desarrollo Web</option>
+              <option value="personalizado">Desarrollo a Medida</option>
+              <option value="varios">Varios / No sé</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sector">Sector</label>
+            <select id="sector" name="sector">
+              <option value="">Selecciona tu sector</option>
+              <option value="industrial">Industrial / Manufactura</option>
+              <option value="retail">Retail / Distribución</option>
+              <option value="servicios">Servicios Profesionales</option>
+              <option value="inmobiliario">Inmobiliario</option>
+              <option value="construccion">Construcción</option>
+              <option value="salud">Salud</option>
+              <option value="educacion">Educación</option>
+              <option value="publico">Sector Público</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tamano">Tamaño de empresa</label>
+            <select id="tamano" name="tamano">
+              <option value="">Selecciona una opción</option>
+              <option value="1-10">1-10 empleados</option>
+              <option value="11-50">11-50 empleados</option>
+              <option value="51-200">51-200 empleados</option>
+              <option value="201-500">201-500 empleados</option>
+              <option value="500+">Más de 500 empleados</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="interes">Tipo de interés</label>
+            <select id="interes" name="interes">
+              <option value="">Selecciona una opción</option>
+              <option value="informacion">Quiero información</option>
+              <option value="demo">Quiero ver una demo</option>
+              <option value="presupuesto">Quiero un presupuesto</option>
+              <option value="proyecto">Tengo un proyecto en mente</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Cuéntanos tu proyecto o necesidades</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente qué necesitas, tu situación actual y qué te gustaría conseguir con IAORUS..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;font-size:1.05rem;">Enviar solicitud →</button>
+        <p style="text-align:center;font-size:0.8rem;color:var(--gray);margin-top:12px;">Te responderemos en menos de 24 horas hábiles. Sin compromiso.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light" style="text-align:center;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;max-width:800px;margin:0 auto;">
+      <div>
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);">&lt; 24h</div>
+        <p style="font-size:0.85rem;">Respuesta a tu solicitud</p>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);">45 min</div>
+        <p style="font-size:0.85rem;">Demo personalizada</p>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);">100%</div>
+        <p style="font-size:0.85rem;">Adaptada a tu sector</p>
+      </div>
+      <div>
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);">Gratuita</div>
+        <p style="font-size:0.85rem;">Sin compromiso</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+            <img src="./assets/images/logo_iaorus_black.png" alt="logo_iaorus" style="height:60px;">
+            <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
+          </div>
+        <p>Software empresarial inteligente generado por IA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="productos.html">IAORUS ERP</a>
+        <a href="productos.html">IAORUS BP360</a>
+        <a href="productos.html">Gest-IA</a>
+        <a href="productos.html">IATask</a>
+        <a href="productos.html">Control de Accesos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="recursos.html">Catálogos</a>
+        <a href="recursos.html">Presentaciones</a>
+        <a href="recursos.html">Documentación Técnica</a>
+        <a href="demo.html">Solicitar Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Contactar</a>
+        <a href="mailto:info@iaorus.com">info@iaorus.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 IAORUS. Todos los derechos reservados.</span>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter/X">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

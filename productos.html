@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos - IAORUS</title>
+<meta name="description" content="Descubre todos los productos IAORUS: ERP, BP360, Gest-IA, IATask, APP RRHH, Control de Accesos y Desarrollo Web.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="./assets/images/logo_iaorus_white.png" alt="logo_iaorus" style="height:60px;">
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html" class="active">Productos</a>
+      <a href="soluciones.html">Sectores</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="demo.html" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Solicitar Demo</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Nuestros Productos</h1>
+    <p>Una plataforma modular con inteligencia artificial integrada. Cada producto puede funcionar de forma independiente o como parte de un ecosistema completo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto 48px;text-align:center;">
+      <p style="font-size:1.1rem;">Todos nuestros productos comparten una arquitectura común basada en IA generativa, base de datos unificada y motor de integración en tiempo real. Haz clic en cualquier producto para ver su documentación asociada.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="openProductModal('erp')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">⚡</div>
+        <h3>IAORUS ERP</h3>
+        <p>Plataforma completa de gestión empresarial que integra ERP, CRM, Control de Accesos, RRHH y Proyectos en un único ecosistema con IA generativa.</p>
+        <div class="product-tags"><span class="product-tag">ERP</span><span class="product-tag">CRM</span><span class="product-tag">IA</span><span class="product-tag">Modular</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('bp360')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">🏗️</div>
+        <h3>IAORUS BP360</h3>
+        <p>Plataforma inteligente para el sector inmobiliario. Gestiona activos, inversores, colaboradores y operaciones con IA. Incluye web colaborativa integrada.</p>
+        <div class="product-tags"><span class="product-tag">Inmobiliario</span><span class="product-tag">IA</span><span class="product-tag">Inversiones</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('gestia')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">📄</div>
+        <h3>Gest-IA</h3>
+        <p>Gestión inteligente de documentos y expedientes. La IA optimiza procesos de clasificación, búsqueda y organización documental.</p>
+        <div class="product-tags"><span class="product-tag">Documentos</span><span class="product-tag">IA</span><span class="product-tag">Expedientes</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('iatask')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">⏱️</div>
+        <h3>IATask</h3>
+        <p>Optimización de producción y control de asistencia. Plataforma unificada para mejorar la eficiencia de equipos y controlar tiempos de trabajo.</p>
+        <div class="product-tags"><span class="product-tag">Producción</span><span class="product-tag">Asistencia</span><span class="product-tag">Tiempos</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('apprrhh')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">👥</div>
+        <h3>APP RRHH</h3>
+        <p>Tests, cuestionarios e informes de RRHH con IA y metodología científica. Analiza datos, voz y gestos para una evaluación completa del talento.</p>
+        <div class="product-tags"><span class="product-tag">RRHH</span><span class="product-tag">IA</span><span class="product-tag">Evaluación</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('accesos')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">🔐</div>
+        <h3>Control de Accesos</h3>
+        <p>Sistema nativo de control de accesos con soporte para RFID, biometría, QR y多条 marcas de controladoras. Gestión centralizada desde el ERP.</p>
+        <div class="product-tags"><span class="product-tag">Accesos</span><span class="product-tag">RFID</span><span class="product-tag">Biometría</span><span class="product-tag">QR</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('web')">
+        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">🌐</div>
+        <h3>Desarrollo Web</h3>
+        <p>Creación de páginas web corporativas y tiendas online a medida. Diseño UX/UI, desarrollo y optimización para buscadores.</p>
+        <div class="product-tags"><span class="product-tag">Web</span><span class="product-tag">E-commerce</span><span class="product-tag">UX/UI</span></div>
+        <span class="product-link">Ver documentación disponible →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section bg-light">
+  <div class="container">
+    <h2>¿No encuentras lo que buscas?</h2>
+    <p>Todo nuestro software es personalizable. Si necesitas una solución específica, podemos crearla para ti.</p>
+    <div class="cta-actions">
+      <a href="demo.html" class="btn btn-primary">Solicitar Demo →</a>
+      <a href="contacto.html" class="btn btn-outline">Consultar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+            <img src="./assets/images/logo_iaorus_black.png" alt="logo_iaorus" style="height:60px;">
+            <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
+          </div>
+        <p>Software empresarial inteligente generado por IA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="productos.html">IAORUS ERP</a>
+        <a href="productos.html">IAORUS BP360</a>
+        <a href="productos.html">Gest-IA</a>
+        <a href="productos.html">IATask</a>
+        <a href="productos.html">Control de Accesos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="recursos.html">Catálogos</a>
+        <a href="recursos.html">Presentaciones</a>
+        <a href="recursos.html">Documentación Técnica</a>
+        <a href="demo.html">Solicitar Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Contactar</a>
+        <a href="mailto:info@iaorus.com">info@iaorus.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 IAORUS. Todos los derechos reservados.</span>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter/X">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

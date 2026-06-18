@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAORUS - Software Inteligente Generado por IA</title>
+<link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+<meta name="description" content="IAORUS: plataforma AI-driven que genera software empresarial completo en minutos. ERP, CRM, Control de Accesos y más.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="./assets/images/logo_iaorus_white.png" alt="logo_iaorus" style="height:60px;">
+    </a>
+    <nav>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="soluciones.html">Sectores</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="demo.html" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Solicitar Demo</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="section-tag" style="background:rgba(255,255,255,0.15);color:white;">IA Generativa Empresarial</span>
+      <h1>Software empresarial generado por IA en minutos</h1>
+      <p>IAORUS crea aplicaciones empresariales completas, personalizadas y escalables mediante inteligencia artificial avanzada. ERP, CRM, control de accesos y más, adaptados al 100% a tu negocio.</p>
+      <div class="hero-actions">
+        <a href="demo.html" class="btn btn-accent">Solicitar Demo →</a>
+        <a href="productos.html" class="btn btn-white">Ver Productos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-value">&lt;10 min</div><div class="hero-stat-label">Generación de software</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">-70%</div><div class="hero-stat-label">Coste vs desarrollo tradicional</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">100%</div><div class="hero-stat-label">Personalizable</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <h3>Ecosistema IAORUS</h3>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">⚡</div>
+          <div class="hero-card-text"><strong>IAORUS ERP</strong><span>Gestión empresarial completa con IA</span></div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">🏗️</div>
+          <div class="hero-card-text"><strong>IAORUS BP360</strong><span>Plataforma inmobiliaria inteligente</span></div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">📄</div>
+          <div class="hero-card-text"><strong>Gest-IA</strong><span>Gestión documental con IA</span></div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">🔐</div>
+          <div class="hero-card-text"><strong>Control de Accesos</strong><span>RFID, biometría y QR integrados</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">Productos</span>
+      <h2>Nuestra plataforma modular</h2>
+      <p>Soluciones inteligentes que se adaptan a cada negocio. Todos los módulos comparten una base de datos común y un motor de IA integrado.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="openProductModal('erp')">
+        <div class="product-icon">⚡</div>
+        <h3>IAORUS ERP</h3>
+        <p>ERP, CRM, proyectos y control de accesos en un único ecosistema. Personalización total sin programación.</p>
+        <div class="product-tags"><span class="product-tag">ERP</span><span class="product-tag">CRM</span><span class="product-tag">IA</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('bp360')">
+        <div class="product-icon">🏗️</div>
+        <h3>IAORUS BP360</h3>
+        <p>Plataforma integral para gestión inmobiliaria con IA: activos, inversores, colaboradores y web colaborativa.</p>
+        <div class="product-tags"><span class="product-tag">Inmobiliario</span><span class="product-tag">IA</span><span class="product-tag">Inversiones</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('gestia')">
+        <div class="product-icon">📄</div>
+        <h3>Gest-IA</h3>
+        <p>Gestión inteligente de documentos y expedientes con inteligencia artificial. Optimiza procesos documentales.</p>
+        <div class="product-tags"><span class="product-tag">Documentos</span><span class="product-tag">IA</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('iatask')">
+        <div class="product-icon">⏱️</div>
+        <h3>IATask</h3>
+        <p>Optimización de producción y control de asistencia. Plataforma unificada para equipos y tiempos de trabajo.</p>
+        <div class="product-tags"><span class="product-tag">Producción</span><span class="product-tag">Asistencia</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('apprrhh')">
+        <div class="product-icon">👥</div>
+        <h3>APP RRHH</h3>
+        <p>Cuestionarios, test e informes con IA y metodología científica para análisis de datos, voz y gestos.</p>
+        <div class="product-tags"><span class="product-tag">RRHH</span><span class="product-tag">IA</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('accesos')">
+        <div class="product-icon">🔐</div>
+        <h3>Control de Accesos</h3>
+        <p>Sistema nativo de control de accesos RFID, biometría y QR integrado con ERP y CRM. Gestión centralizada.</p>
+        <div class="product-tags"><span class="product-tag">Accesos</span><span class="product-tag">RFID</span><span class="product-tag">Biometría</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+      <div class="product-card" onclick="openProductModal('web')">
+        <div class="product-icon">🌐</div>
+        <h3>Desarrollo Web</h3>
+        <p>Páginas web corporativas y tiendas online a medida. Diseño, desarrollo y posicionamiento.</p>
+        <div class="product-tags"><span class="product-tag">Web</span><span class="product-tag">E-commerce</span></div>
+        <span class="product-link">Ver documentación →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">Sectores</span>
+      <h2>Soluciones para tu sector</h2>
+      <p>Adaptamos nuestra tecnología a las necesidades específicas de cada industria.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <div class="sector-icon">🏭</div>
+        <h4>Industrial</h4>
+        <p>Integración de procesos, trazabilidad y automatización con IA.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🛒</div>
+        <h4>Retail</h4>
+        <p>Gestión omnicanal, sincronización ventas-stock en tiempo real.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">💼</div>
+        <h4>Servicios Profesionales</h4>
+        <p>Control de proyectos, facturación automatizada y reporting inteligente.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏠</div>
+        <h4>Inmobiliario</h4>
+        <p>Gestión de activos, inversores y colaboradores con IAORUS BP360.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏗️</div>
+        <h4>Construcción</h4>
+        <p>Gestión de proyectos, presupuestos y control de obra.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏥</div>
+        <h4>Salud</h4>
+        <p>Gestión clínica, historiales y facturación adaptada al sector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">Servicios</span>
+      <h2>Más que software, un partner tecnológico</h2>
+      <p>Acompañamos a tu empresa en todo el ciclo de transformación digital.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Licencias SaaS</h3>
+        <p>Planes anuales desde 25.000€ con soporte, mantenimiento y actualizaciones automáticas IA.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛠️</div>
+        <h3>Desarrollo a Medida</h3>
+        <p>Proyectos personalizados de 45.000 a 150.000€ con metodología ágil y entregas rápidas.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Consultoría</h3>
+        <p>Diagnóstico de madurez digital, análisis de procesos y hoja de ruta tecnológica.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📚</div>
+        <h3>Formación</h3>
+        <p>Capacitación en plataforma IAORUS y transformación digital para tu equipo.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Outsourcing</h3>
+        <p>Externalización de procesos con plataformas tecnológicas a medida y personal dedicado.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Implantación</h3>
+        <p>Acompañamiento completo en la implantación, configuración y puesta en marcha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary">
+  <div class="container" style="text-align:center;">
+    <span class="section-tag" style="background:rgba(255,255,255,0.15);color:white;">Repositorio Documental</span>
+    <h2>Recursos y documentación</h2>
+    <p style="max-width:600px;margin:0 auto 32px;">Accede a catálogos, fichas técnicas, presentaciones y casos de uso de todos nuestros productos y servicios.</p>
+    <a href="recursos.html" class="btn btn-accent">Explorar Recursos →</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">Confianza</span>
+      <h2>Por qué elegir IAORUS</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;">
+      <div style="text-align:center;padding:24px;">
+        <div style="font-size:2.4rem;margin-bottom:12px;">⚡</div>
+        <h4>Velocidad</h4>
+        <p style="font-size:0.9rem;">Aplicaciones completas generadas en menos de 10 minutos mediante IA generativa.</p>
+      </div>
+      <div style="text-align:center;padding:24px;">
+        <div style="font-size:2.4rem;margin-bottom:12px;">🎯</div>
+        <h4>Personalización</h4>
+        <p style="font-size:0.9rem;">IA adaptativa que se ajusta al 100% a tu sector, tamaño y procesos internos.</p>
+      </div>
+      <div style="text-align:center;padding:24px;">
+        <div style="font-size:2.4rem;margin-bottom:12px;">📈</div>
+        <h4>Escalabilidad</h4>
+        <p style="font-size:0.9rem;">Arquitectura modular en cloud que crece contigo, de pyme a corporación.</p>
+      </div>
+      <div style="text-align:center;padding:24px;">
+        <div style="font-size:2.4rem;margin-bottom:12px;">💰</div>
+        <h4>Eficiencia</h4>
+        <p style="font-size:0.9rem;">Hasta un 70% menos de coste de desarrollo y menor TCO anual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section bg-light">
+  <div class="container">
+    <h2>¿Listo para transformar tu negocio?</h2>
+    <p>Solicita una demo personalizada y descubre cómo IAORUS puede generar el software que tu empresa necesita.</p>
+    <div class="cta-actions">
+      <a href="demo.html" class="btn btn-primary">Solicitar Demo →</a>
+      <a href="contacto.html" class="btn btn-outline">Contactar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+            <img src="./assets/images/logo_iaorus_black.png" alt="logo_iaorus" style="height:60px;">
+            <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
+          </div>
+        <p>Software empresarial inteligente generado por IA. Transformamos la manera en que las empresas innovan, operan y compiten.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="productos.html">IAORUS ERP</a>
+        <a href="productos.html">IAORUS BP360</a>
+        <a href="productos.html">Gest-IA</a>
+        <a href="productos.html">IATask</a>
+        <a href="productos.html">Control de Accesos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="recursos.html">Catálogos</a>
+        <a href="recursos.html">Presentaciones</a>
+        <a href="recursos.html">Documentación Técnica</a>
+        <a href="demo.html">Solicitar Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Contactar</a>
+        <a href="mailto:info@iaorus.com">info@iaorus.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 IAORUS. Todos los derechos reservados.</span>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter/X">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
