@@ -4,121 +4,216 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Soluciones por Sector - IAORUS</title>
-<meta name="description" content="Soluciones IAORUS adaptadas a cada sector: industrial, retail, servicios, inmobiliario, construcción, salud y más.">
+<meta name="description" content="Soluciones IAORUS adaptadas a cada sector: industrial, retail, servicios, inmobiliario y más. Software que se adapta a tu industria.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
   <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <img src="./assets/images/logo_iaorus_white.png" alt="logo_iaorus" style="height:60px;">
-    </a>
+    <a href="index.html" class="logo"><img src="./assets/images/logo_iaorus_white.png" alt="IAORUS"></a>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="soluciones.html" class="active">Sectores</a>
       <a href="servicios.html">Servicios</a>
       <a href="recursos.html">Recursos</a>
-      <a href="demo.html" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Solicitar Demo</a>
+      <a href="demo.html" class="btn btn-demo btn-sm">Solicitar Demo</a>
     </nav>
     <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<section class="page-header">
+<section class="parallax-hero" style="background-image:url('./assets/images/pexels-kampus-8353820.jpg');">
   <div class="container">
-    <h1>Soluciones por Sector</h1>
-    <p>Adaptamos nuestra tecnología inteligente a las necesidades específicas de cada industria. Conoce cómo IAORUS puede transformar tu sector.</p>
+    <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Sectores</span>
+    <h1>Soluciones para tu industria</h1>
+    <p>Cada sector tiene sus propios desafíos. IAORUS se adapta a ellos para ayudarte a crecer.</p>
+    <a href="demo.html" class="btn btn-demo">Solicitar demo →</a>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="sectors-grid" style="margin-bottom:48px;">
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">🏭</div>
-        <h4>Industrial y Manufactura</h4>
-        <p>Integración de procesos productivos, trazabilidad total, automatización de planta y control de inventarios con IA. Productos: IAORUS ERP + IATask + Control de Accesos.</p>
-      </div>
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">🛒</div>
-        <h4>Retail y Distribución</h4>
-        <p>Gestión omnicanal, sincronización de ventas y stock en tiempo real, predicción de demanda y fidelización de clientes. Productos: IAORUS ERP + CRM + IA predictiva.</p>
-      </div>
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">💼</div>
-        <h4>Servicios Profesionales</h4>
-        <p>Control de proyectos, facturación automatizada, reporting inteligente y gestión documental. Productos: IAORUS a medida + Gest-IA.</p>
-      </div>
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">🏠</div>
-        <h4>Inmobiliario</h4>
-        <p>Gestión integral de activos inmobiliarios, inversores y colaboradores. Portal colaborativo y dashboard de inversiones con IA. Producto: IAORUS BP360.</p>
-      </div>
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">🏗️</div>
-        <h4>Construcción</h4>
-        <p>Gestión de proyectos de construcción, presupuestos, control de obra, trazabilidad de materiales y coordinación de equipos. Productos: IAORUS BP360 + IATask.</p>
-      </div>
-      <div class="sector-card" style="cursor:default;">
-        <div class="sector-icon">🏥</div>
-        <h4>Salud</h4>
-        <p>Gestión clínica y hospitalaria, historiales clínicos, facturación sanitaria y control de pacientes con IA. Productos: IAORUS ERP + APP RRHH.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="bg-light">
-  <div class="container">
+    <!-- INDUSTRIAL -->
     <div class="section-title">
-      <span class="section-tag">Documentación por Sector</span>
-      <h2>Recursos sectoriales</h2>
-      <p>Cada sector cuenta con documentación específica para facilitar la toma de decisiones.</p>
+      <span class="section-tag">Industrial</span>
+      <h2>Automatiza tu planta y optimiza la producción</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;">
-      <div class="product-card" onclick="showToast('Documentación sectorial disponible próximamente')">
-        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">🏭</div>
-        <h4>Dossier Industrial</h4>
-        <p style="font-size:0.9rem;color:var(--gray);margin-bottom:16px;">Guía de transformación digital para industria y manufactura con IA.</p>
-        <span class="product-link">Próximamente →</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:48px;">
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:8px;">¿Qué es?</h4>
+        <p>Sistema de gestión industrial que integra producción, trazabilidad y control de accesos en una sola plataforma inteligente.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Para quién?</h4>
+        <p>Fábricas, plantas de producción y empresas logísticas de más de 20 empleados.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Qué problema resuelve?</h4>
+        <p>Procesos lentos, falta de trazabilidad, errores de inventario y desconexión entre departamentos.</p>
+        <a href="demo.html" class="btn btn-orange" style="margin-top:16px;">Ver solución industrial →</a>
       </div>
-      <div class="product-card" onclick="showToast('Documentación sectorial disponible próximamente')">
-        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">🛒</div>
-        <h4>Guía Retail Intelligence</h4>
-        <p style="font-size:0.9rem;color:var(--gray);margin-bottom:16px;">Cómo la IA está transformando el retail y la distribución.</p>
-        <span class="product-link">Próximamente →</span>
-      </div>
-      <div class="product-card" onclick="showToast('Documentación sectorial disponible próximamente')">
-        <div class="product-icon" style="background:#e8f0fe;color:#1C4E80;">📊</div>
-        <h4>Estudio de Mercado Servicios</h4>
-        <p style="font-size:0.9rem;color:var(--gray);margin-bottom:16px;">Análisis del mercado de software para empresas de servicios en España.</p>
-        <span class="product-link">Próximamente →</span>
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:12px;">Beneficios</h4>
+        <div style="display:grid;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Automatización de procesos productivos</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Trazabilidad completa de materiales y lotes</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Reducción de errores y mermas en producción</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Control de acceso y tiempos integrado</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Escalabilidad para crecimiento de planta</span>
+          </div>
+        </div>
       </div>
     </div>
+    <div style="background:var(--gray-bg);border-radius:12px;padding:24px;margin-bottom:64px;">
+      <h4 style="color:var(--orange);margin-bottom:8px;">¿Cómo funciona?</h4>
+      <p style="font-size:0.95rem;margin-bottom:0;">El sistema se conecta con tu operativa diaria y aprende de ella. Automatiza tareas repetitivas, detecta cuellos de botella y te alerta antes de que surjan problemas. Todo desde un panel central que muestra el estado de tu planta en tiempo real.</p>
+    </div>
+
+    <!-- RETAIL -->
+    <div class="section-title">
+      <span class="section-tag">Retail</span>
+      <h2>Impulsa tus ventas con datos inteligentes</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:48px;">
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:8px;">¿Qué es?</h4>
+        <p>Sistema de gestión comercial que unifica tiendas, almacén y canales online con inteligencia de negocio integrada.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Para quién?</h4>
+        <p>Cadenas retail, franquicias, tiendas especializadas y comercios multicanal.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Qué problema resuelve?</h4>
+        <p>Stock descontrolado, ventas offline y online desconectadas, promociones difíciles de gestionar.</p>
+        <a href="demo.html" class="btn btn-orange" style="margin-top:16px;">Ver solución retail →</a>
+      </div>
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:12px;">Beneficios</h4>
+        <div style="display:grid;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Stock en tiempo real en todos los canales</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Predicción de demanda para optimizar compras</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Incremento de ventas con recomendaciones</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Fidelización con ofertas personalizadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--gray-bg);border-radius:12px;padding:24px;margin-bottom:64px;">
+      <h4 style="color:var(--orange);margin-bottom:8px;">¿Cómo funciona?</h4>
+      <p style="font-size:0.95rem;margin-bottom:0;">Centraliza todos tus canales y analiza el comportamiento de tus clientes. El sistema aprende qué se vende más, cuándo y a quién, para ayudarte a tomar mejores decisiones comerciales.</p>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="section-title">
+      <span class="section-tag">Servicios Profesionales</span>
+      <h2>Controla proyectos y haz crecer tu consultora</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:48px;">
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:8px;">¿Qué es?</h4>
+        <p>Sistema de gestión para empresas de servicios que necesitan controlar proyectos, facturar correctamente y medir su rentabilidad.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Para quién?</h4>
+        <p>Consultoras, agencias, despachos profesionales, ingenierías y servicios B2B.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Qué problema resuelve?</h4>
+        <p>Proyectos descontrolados, facturación retrasada y procesos administrativos que consumen tiempo.</p>
+        <a href="demo.html" class="btn btn-orange" style="margin-top:16px;">Ver solución servicios →</a>
+      </div>
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:12px;">Beneficios</h4>
+        <div style="display:grid;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Control de horas y rentabilidad por proyecto</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Facturación automatizada sin errores</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Reporting inteligente para decisiones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INMOBILIARIO -->
+    <div class="section-title">
+      <span class="section-tag">Inmobiliario</span>
+      <h2>Profesionaliza tu negocio inmobiliario</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:8px;">¿Qué es?</h4>
+        <p>Plataforma que centraliza activos, inversores y colaboradores del sector inmobiliario en un solo entorno digital.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Para quién?</h4>
+        <p>Inmobiliarias, gestoras de activos, promotoras e inversores.</p>
+        <h4 style="color:var(--orange);margin-top:24px;margin-bottom:8px;">¿Qué problema resuelve?</h4>
+        <p>Información dispersa, colaboración desorganizada y procesos comerciales lentos.</p>
+        <a href="demo.html" class="btn btn-orange" style="margin-top:16px;">Ver solución inmobiliaria →</a>
+      </div>
+      <div>
+        <h4 style="color:var(--orange);margin-bottom:12px;">Beneficios</h4>
+        <div style="display:grid;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Activos y documentación centralizados</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Red privada de colaboradores</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--gray-bg);border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size:0.9rem;">Gestión profesional de inversores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="cta-section">
+<div class="cta-block">
   <div class="container">
     <h2>¿No encuentras tu sector?</h2>
-    <p>IAORUS se adapta a cualquier industria. Háblanos de tu negocio y te propondremos la mejor solución.</p>
+    <p>IAORUS se adapta a cualquier industria. Cuéntanos tu caso y te propondremos la mejor solución.</p>
     <div class="cta-actions">
-      <a href="demo.html" class="btn btn-primary">Solicitar Demo →</a>
-      <a href="contacto.html" class="btn btn-outline">Consultar</a>
+      <a href="demo.html" class="btn btn-demo btn-lg">Solicitar demo →</a>
+      <a href="contacto.html" class="btn btn-white">Hablar con un especialista</a>
     </div>
   </div>
-</section>
+</div>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-            <img src="./assets/images/logo_iaorus_black.png" alt="logo_iaorus" style="height:60px;">
-            <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
-          </div>
-        <p>Software empresarial inteligente generado por IA.</p>
+          <img src="./assets/images/logo_iaorus_black.png" alt="IAORUS" style="height:60px;">
+          <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
+        </div>
+        <p>Software empresarial inteligente.</p>
       </div>
       <div class="footer-col">
         <h4>Productos</h4>
@@ -151,6 +246,17 @@
     </div>
   </div>
 </footer>
+
+<div class="cta-floating">
+  <div class="container">
+    <p>¿Hablamos de tu sector?</p>
+    <div style="display:flex;gap:8px;">
+      <a href="demo.html" class="btn btn-demo btn-sm">Solicitar demo →</a>
+      <a href="contacto.html" class="btn btn-outline-orange btn-sm">Llamada</a>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>

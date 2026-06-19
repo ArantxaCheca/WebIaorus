@@ -19,7 +19,7 @@
       <a href="soluciones.html">Sectores</a>
       <a href="servicios.html">Servicios</a>
       <a href="recursos.html">Recursos</a>
-      <a href="demo.html" class="btn btn-primary" style="padding:8px 20px;font-size:0.85rem;">Solicitar Demo</a>
+      <a href="demo.html" class="btn btn-demo btn-sm">Solicitar Demo</a>
     </nav>
     <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -36,43 +36,46 @@
   <div class="container">
     <div class="contact-grid">
       <div>
-        <h3 style="color:var(--primary-dark);margin-bottom:24px;">Información de contacto</h3>
+        <div class="contact-image">
+          <img src="./assets/images/pexels-gustavo-fring-4872048.jpg" alt="Profesional con tablet" style="width:100%;border-radius:var(--radius);margin-bottom:24px;">
+        </div>
+        <h3 style="color:var(--blue-dark);margin-bottom:24px;">Información de contacto</h3>
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div>
             <strong>Dirección</strong>
             <p style="margin-bottom:0;">Oficinas centrales IAORUS<br>España</p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div>
             <strong>Email</strong>
-            <p style="margin-bottom:0;"><a href="mailto:info@iaorus.com" style="color:var(--primary);">info@iaorus.com</a></p>
+            <p style="margin-bottom:0;"><a href="mailto:info@iaorus.com" style="color:var(--blue);">info@iaorus.com</a></p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">🌐</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div>
             <strong>Web</strong>
-            <p style="margin-bottom:0;"><a href="https://platformline.es" target="_blank" style="color:var(--primary);">platformline.es</a></p>
+            <p style="margin-bottom:0;"><a href="https://platformline.es" target="_blank" style="color:var(--blue);">platformline.es</a></p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">⏰</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div>
             <strong>Horario</strong>
             <p style="margin-bottom:0;">Lunes a viernes: 9:00 - 18:00<br>Respondemos en menos de 24h</p>
           </div>
         </div>
         <div style="margin-top:32px;padding:24px;background:var(--light-gray);border-radius:var(--radius);">
-          <h4 style="color:var(--primary-dark);margin-bottom:8px;">¿Prefieres una demo?</h4>
+          <h4 style="color:var(--blue-dark);margin-bottom:8px;">¿Prefieres una demo?</h4>
           <p style="font-size:0.9rem;margin-bottom:16px;">Solicita una sesión personalizada y descubre cómo IAORUS puede transformar tu negocio.</p>
-          <a href="demo.html" class="btn btn-primary">Solicitar Demo →</a>
+          <a href="demo.html" class="btn btn-demo">Solicitar Demo →</a>
         </div>
       </div>
       <div>
-        <h3 style="color:var(--primary-dark);margin-bottom:24px;">Envíanos un mensaje</h3>
+        <h3 style="color:var(--blue-dark);margin-bottom:24px;">Envíanos un mensaje</h3>
         <form id="contact-form">
           <div class="form-row">
             <div class="form-group">
@@ -100,7 +103,7 @@
             <label for="contact-mensaje">Mensaje *</label>
             <textarea id="contact-mensaje" name="mensaje" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;">Enviar mensaje →</button>
+          <button type="submit" class="btn btn-demo" style="width:100%;justify-content:center;padding:14px;">Enviar mensaje →</button>
         </form>
       </div>
     </div>
@@ -115,7 +118,7 @@
             <img src="./assets/images/logo_iaorus_black.png" alt="logo_iaorus" style="height:60px;">
             <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
           </div>
-        <p>Software empresarial inteligente generado por IA.</p>
+        <p>Software empresarial inteligente.</p>
       </div>
       <div class="footer-col">
         <h4>Productos</h4>
