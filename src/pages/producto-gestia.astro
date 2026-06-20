@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = 'Gest-IA - Gestión Inteligente de Documentos';
+const description = 'Organiza, clasifica y encuentra cualquier documento en segundos con IA.';
+const currentPage = '/producto-gestia';
+---
+
+<BaseLayout title={title} description={description} currentPage={currentPage}>
+  <Header slot="header" currentPage={currentPage} />
+  
+  <section class="video-hero">
+    <div class="video-hero-bg"></div>
+    <div class="container">
+      <div class="video-hero-content">
+        <div class="video-hero-text">
+          <span class="hero-tag">Producto</span>
+          <h1>Gest-IA</h1>
+          <p>Olvídate de buscar documentos perdidos. Gest-IA organiza, clasifica y encuentra cualquier expediente en segundos. Con IA que aprende de tu forma de trabajar.</p>
+          <div class="hero-actions" style="justify-content:flex-start;">
+            <a href="/demo?producto=gestia" class="btn btn-demo">Solicitar demo Gest-IA →</a>
+          </div>
+        </div>
+        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_GESTIA', 'Gest-IA')">
+          <img src="/assets/images/thumbnails/thumb-gestia.jpg" alt="Gest-IA" onerror="imgFallback(this,'GI')">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+        <h2>¿Por qué Gest-IA?</h2>
+        <p>La IA que organiza tus documentos para que tú te centres en lo importante.</p>
+      </div>
+      <div class="landing-benefits">
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Búsqueda instantánea</h4>
+          <p>Encuentra cualquier documento en menos de 5 segundos</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Clasificación automática</h4>
+          <p>La IA organiza tus documentos por ti</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Eliminación de duplicados</h4>
+          <p>Adiós a las versiones múltiples y archivos repetidos</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Aprendizaje continuo</h4>
+          <p>Cuanto más lo usas, mejor clasifica</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+        <h2>Gestión documental inteligente en 3 pasos</h2>
+        <p>Pon orden a tus documentos con la ayuda de la IA.</p>
+      </div>
+      <div class="landing-steps">
+        <div class="landing-step">
+          <div class="landing-step-num">1</div>
+          <h4>Conecta tus archivos</h4>
+          <p>Vincula tus carpetas y repositorios documentales</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">2</div>
+          <h4>IA aprende</h4>
+          <p>El sistema analiza y clasifica tu documentación automáticamente</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">3</div>
+          <h4>Encuentra al instante</h4>
+          <p>Busca cualquier documento en segundos desde cualquier dispositivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-cta-section">
+    <div class="container">
+      <h2>¿Listo para dejar de perder documentos?</h2>
+      <p>Descubre cómo Gest-IA puede transformar la gestión documental de tu empresa.</p>
+      <div class="landing-cta-actions">
+        <a href="/demo?producto=gestia" class="btn btn-demo">Solicitar demo Gest-IA →</a>
+        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-floating">
+    <div class="container">
+      <p>¿Listo para dejar de perder documentos?</p>
+      <div style="display:flex;gap:8px;">
+        <a href="/demo?producto=gestia" class="btn btn-demo btn-sm">Solicitar demo →</a>
+        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
+      </div>
+    </div>
+  </div>
+  
+  <Footer slot="footer" />
+</BaseLayout>

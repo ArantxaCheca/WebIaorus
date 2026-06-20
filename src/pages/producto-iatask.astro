@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = 'IATask - Control de Producción y Equipo';
+const description = 'Controla la producción, tareas y asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa.';
+const currentPage = '/producto-iatask';
+---
+
+<BaseLayout title={title} description={description} currentPage={currentPage}>
+  <Header slot="header" currentPage={currentPage} />
+  
+  <section class="video-hero">
+    <div class="video-hero-bg"></div>
+    <div class="container">
+      <div class="video-hero-content">
+        <div class="video-hero-text">
+          <span class="hero-tag">Producto</span>
+          <h1>IATask</h1>
+          <p>Controla la producción, las tareas y la asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa desde una plataforma unificada.</p>
+          <div class="hero-actions" style="justify-content:flex-start;">
+            <a href="/demo?producto=iatask" class="btn btn-demo">Solicitar demo IATask →</a>
+          </div>
+        </div>
+        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_IATASK', 'IATask')">
+          <img src="/assets/images/thumbnails/thumb-iatask.jpg" alt="IATask" onerror="imgFallback(this,'IT')">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+        <h2>¿Por qué IATask?</h2>
+        <p>Optimiza la gestión de tu equipo y mejora la productividad.</p>
+      </div>
+      <div class="landing-benefits">
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Control de producción</h4>
+          <p>Planifica y supervisa la producción en tiempo real</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Registro de asistencia</h4>
+          <p>Control de presencia integrado con tus equipos</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Eficiencia operativa</h4>
+          <p>Detecta cuellos de botella antes de que sean problema</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Productividad del equipo</h4>
+          <p>Mide y mejora el rendimiento de cada colaborador</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+        <h2>IATask en 3 pasos</h2>
+        <p>Implementación rápida y sin complicaciones.</p>
+      </div>
+      <div class="landing-steps">
+        <div class="landing-step">
+          <div class="landing-step-num">1</div>
+          <h4>Configuramos tu operativa</h4>
+          <p>Definimos procesos, tareas y equipos en la plataforma</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">2</div>
+          <h4>Conectamos dispositivos</h4>
+          <p>Integramos reloj, RFID y sistemas de producción</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">3</div>
+          <h4>Optimizamos resultados</h4>
+          <p>Datos en tiempo real para mejorar continuamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-cta-section">
+    <div class="container">
+      <h2>¿Listo para optimizar tu producción?</h2>
+      <p>Solicita una demo personalizada y descubre cómo IATask puede transformar tu operativa.</p>
+      <div class="landing-cta-actions">
+        <a href="/demo?producto=iatask" class="btn btn-demo">Solicitar demo IATask →</a>
+        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-floating">
+    <div class="container">
+      <p>¿Listo para optimizar tu producción?</p>
+      <div style="display:flex;gap:8px;">
+        <a href="/demo?producto=iatask" class="btn btn-demo btn-sm">Solicitar demo →</a>
+        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
+      </div>
+    </div>
+  </div>
+  
+  <Footer slot="footer" />
+</BaseLayout>

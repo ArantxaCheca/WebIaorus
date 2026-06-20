@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = 'IAORUS Servicios Profesionales';
+const description = 'Sistema de gestión para empresas de servicios que necesitan controlar proyectos, facturar y medir rentabilidad.';
+const currentPage = '/solucion-servicios';
+---
+
+<BaseLayout title={title} description={description} currentPage={currentPage}>
+  <Header slot="header" currentPage={currentPage} />
+
+  <section class="video-hero">
+  <div class="video-hero-bg"></div>
+  <div class="container">
+    <div class="video-hero-content">
+      <div class="video-hero-text">
+        <span class="hero-tag" style="background:rgba(244,121,32,0.2);border-color:rgba(244,121,32,0.3);">Solución / Servicios</span>
+        <h1>IAORUS Servicios Profesionales</h1>
+        <p>Controla proyectos y haz crecer tu consultora. Gestiona proyectos, facturación y rentabilidad desde una plataforma.</p>
+        <div class="hero-actions" style="justify-content:flex-start;">
+          <a href="/demo?producto=servicios" class="btn btn-demo btn-lg">Solicitar demo Servicios →</a>
+          <a href="/contacto" class="btn btn-outline-orange btn-lg">Hablar con un especialista</a>
+        </div>
+      </div>
+      <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_SERVICIOS', 'IAORUS Servicios Profesionales')">
+        <img src="/assets/images/thumbnails/thumb-servicios.jpg" alt="IAORUS Servicios Profesionales" onerror="imgFallback(this,'SP')">
+        <div class="video-thumb-overlay">
+          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+      <h2>¿Qué consigues con IAORUS Servicios Profesionales?</h2>
+    </div>
+    <div class="landing-benefits">
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Control de proyectos</h4>
+        <p>Horas, recursos y rentabilidad en tiempo real</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Facturación automatizada</h4>
+        <p>Olvídate de facturas atrasadas y errores</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Reporting inteligente</h4>
+        <p>Toma decisiones con datos precisos</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Eficiencia administrativa</h4>
+        <p>Reduce la carga burocrática de tu equipo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+      <h2>Implementación en 3 pasos</h2>
+    </div>
+    <div class="landing-steps">
+      <div class="landing-step">
+        <div class="landing-step-num">1</div>
+        <h4>Configuramos tu estructura</h4>
+        <p>Proyectos, clientes y equipos listos en la plataforma</p>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">2</div>
+        <h4>Automatizamos procesos</h4>
+        <p>Facturación, reporting y control horario sin esfuerzo</p>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">3</div>
+        <h4>Haces crecer tu negocio</h4>
+        <p>Dedica más tiempo a lo que realmente importa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="landing-cta-section">
+  <div class="container">
+    <h2>Transforma tu consultora con datos inteligentes</h2>
+    <p>Descubre cómo IAORUS Servicios Profesionales puede ayudarte a controlar proyectos y escalar tu negocio.</p>
+    <div class="landing-cta-actions">
+      <a href="/demo?producto=servicios" class="btn btn-demo btn-lg">Solicitar demo Servicios →</a>
+      <a href="/contacto" class="btn btn-outline-orange btn-lg">Hablar con un especialista</a>
+    </div>
+  </div>
+</section>
+
+  <Footer slot="footer" />
+</BaseLayout>

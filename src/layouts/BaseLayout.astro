@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  currentPage?: string;
+}
+
+const { title, description, currentPage } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <slot name="header" />
+  <slot />
+  <slot name="footer" />
+  <script is:inline src="/js/main.js"></script>
+  <script is:inline src="/js/video-player.js"></script>
+</body>
+</html>

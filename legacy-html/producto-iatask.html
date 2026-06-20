@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IATask - Control de Producción y Equipo</title>
+<meta name="description" content="Controla la producción, tareas y asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="./assets/images/logo_iaorus_white.png" alt="IAORUS"></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html" class="active">Productos</a>
+      <a href="soluciones.html">Sectores</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="demo.html" class="btn btn-demo btn-sm">Solicitar Demo</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="video-hero">
+  <div class="video-hero-bg"></div>
+  <div class="container">
+    <div class="video-hero-content">
+      <div class="video-hero-text">
+        <span class="hero-tag">Producto</span>
+        <h1>IATask</h1>
+        <p>Controla la producción, las tareas y la asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa desde una plataforma unificada.</p>
+        <div class="hero-actions" style="justify-content:flex-start;">
+          <a href="demo.html?producto=iatask" class="btn btn-demo">Solicitar demo IATask →</a>
+        </div>
+      </div>
+      <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_IATASK', 'IATask')">
+        <img src="./assets/images/thumbnails/thumb-iatask.jpg" alt="IATask" onerror="imgFallback(this,'IT')">
+        <div class="video-thumb-overlay">
+          <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+      <h2>¿Por qué IATask?</h2>
+      <p>Optimiza la gestión de tu equipo y mejora la productividad.</p>
+    </div>
+    <div class="landing-benefits">
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Control de producción</h4>
+        <p>Planifica y supervisa la producción en tiempo real</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Registro de asistencia</h4>
+        <p>Control de presencia integrado con tus equipos</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Eficiencia operativa</h4>
+        <p>Detecta cuellos de botella antes de que sean problema</p>
+      </div>
+      <div class="landing-benefit">
+        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h4>Productividad del equipo</h4>
+        <p>Mide y mejora el rendimiento de cada colaborador</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+      <h2>IATask en 3 pasos</h2>
+      <p>Implementación rápida y sin complicaciones.</p>
+    </div>
+    <div class="landing-steps">
+      <div class="landing-step">
+        <div class="landing-step-num">1</div>
+        <h4>Configuramos tu operativa</h4>
+        <p>Definimos procesos, tareas y equipos en la plataforma</p>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">2</div>
+        <h4>Conectamos dispositivos</h4>
+        <p>Integramos reloj, RFID y sistemas de producción</p>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">3</div>
+        <h4>Optimizamos resultados</h4>
+        <p>Datos en tiempo real para mejorar continuamente</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="landing-cta-section">
+  <div class="container">
+    <h2>¿Listo para optimizar tu producción?</h2>
+    <p>Solicita una demo personalizada y descubre cómo IATask puede transformar tu operativa.</p>
+    <div class="landing-cta-actions">
+      <a href="demo.html?producto=iatask" class="btn btn-demo">Solicitar demo IATask →</a>
+      <a href="contacto.html" class="btn btn-outline-orange">Hablar con un especialista</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="./assets/images/logo_iaorus_black.png" alt="IAORUS" style="height:60px;">
+          <span style="font-size:1.8rem;font-weight:700;color:#ffffff;line-height:1;">IAORUS</span>
+        </div>
+        <p>Software empresarial inteligente.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="producto-erp.html">IAORUS ERP</a>
+        <a href="producto-bp360.html">IAORUS BP360</a>
+        <a href="producto-gestia.html">Gest-IA</a>
+        <a href="producto-iatask.html">IATask</a>
+        <a href="producto-accesos.html">Control de Accesos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="recursos.html">Catálogos</a>
+        <a href="recursos.html">Presentaciones</a>
+        <a href="recursos.html">Documentación Técnica</a>
+        <a href="recursos-audiovisuales.html">Vídeos</a>
+        <a href="demo.html">Solicitar Demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="contacto.html">Contactar</a>
+        <a href="mailto:info@iaorus.com">info@iaorus.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 IAORUS. Todos los derechos reservados.</span>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter/X">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-floating">
+  <div class="container">
+    <p>¿Listo para optimizar tu producción?</p>
+    <div style="display:flex;gap:8px;">
+      <a href="demo.html?producto=iatask" class="btn btn-demo btn-sm">Solicitar demo →</a>
+      <a href="contacto.html" class="btn btn-outline-orange btn-sm">Contactar</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/video-player.js"></script>
+</body>
+</html>

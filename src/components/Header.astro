@@ -1,0 +1,27 @@
+---
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '/' } = Astro.props;
+const activeClass = (path: string) => {
+  if (path === currentPage) return ' active';
+  if (path === '/productos' && currentPage.startsWith('/producto-')) return ' active';
+  if (path === '/soluciones' && currentPage.startsWith('/solucion-')) return ' active';
+  return '';
+};
+---
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo"><img src="/assets/images/logo_iaorus_white.png" alt="IAORUS"></a>
+    <nav>
+      <a href="/"{activeClass('/')}>Inicio</a>
+      <a href="/productos"{activeClass('/productos')}>Productos</a>
+      <a href="/soluciones"{activeClass('/soluciones')}>Sectores</a>
+      <a href="/servicios"{activeClass('/servicios')}>Servicios</a>
+      <a href="/recursos"{activeClass('/recursos')}>Recursos</a>
+      <a href="/demo" class="btn btn-demo btn-sm">Solicitar Demo</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>

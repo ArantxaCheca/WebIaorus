@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = 'Control de Accesos IAORUS - Seguridad Inteligente';
+const description = 'Control de accesos inteligente con RFID, biometría y QR integrados con el ERP.';
+const currentPage = '/producto-accesos';
+---
+
+<BaseLayout title={title} description={description} currentPage={currentPage}>
+  <Header slot="header" currentPage={currentPage} />
+  
+  <section class="video-hero">
+    <div class="video-hero-bg"></div>
+    <div class="container">
+      <div class="video-hero-content">
+        <div class="video-hero-text">
+          <span class="hero-tag">Producto</span>
+          <h1>Control de Accesos</h1>
+          <p>Protege tus instalaciones con control de accesos inteligente. RFID, biometría y QR integrados con el ERP. Gestión centralizada desde un panel.</p>
+          <div class="hero-actions" style="justify-content:flex-start;">
+            <a href="/demo?producto=accesos" class="btn btn-demo">Solicitar demo Accesos →</a>
+          </div>
+        </div>
+        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_ACCESOS', 'Control de Accesos')">
+          <img src="/assets/images/thumbnails/thumb-accesos.jpg" alt="Control de Accesos" onerror="imgFallback(this,'CA')">
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+        <h2>¿Por qué Control de Accesos?</h2>
+        <p>Seguridad inteligente para tus instalaciones, gestionada desde un solo panel.</p>
+      </div>
+      <div class="landing-benefits">
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Seguridad centralizada</h4>
+          <p>Controla todas tus instalaciones desde un solo panel</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Múltiples tecnologías</h4>
+          <p>RFID, biometría y QR en un sistema unificado</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Integración ERP</h4>
+          <p>Conectado con RRHH, control de presencia y nóminas</p>
+        </div>
+        <div class="landing-benefit">
+          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Alertas en tiempo real</h4>
+          <p>Notificaciones instantáneas de accesos no autorizados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+        <h2>Control de Accesos en 3 pasos</h2>
+        <p>Implementación rápida y escalable para cualquier tipo de instalación.</p>
+      </div>
+      <div class="landing-steps">
+        <div class="landing-step">
+          <div class="landing-step-num">1</div>
+          <h4>Instalamos dispositivos</h4>
+          <p>Lectores RFID, biometría y QR en tus puntos de acceso</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">2</div>
+          <h4>Configuramos permisos</h4>
+          <p>Roles, horarios y niveles de acceso personalizados</p>
+        </div>
+        <div class="landing-step">
+          <div class="landing-step-num">3</div>
+          <h4>Gestionas centralizado</h4>
+          <p>Todo desde el panel de control integrado con tu ERP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-cta-section">
+    <div class="container">
+      <h2>¿Listo para proteger tus instalaciones?</h2>
+      <p>Solicita una demo personalizada y descubre cómo Control de Accesos puede mejorar la seguridad de tu empresa.</p>
+      <div class="landing-cta-actions">
+        <a href="/demo?producto=accesos" class="btn btn-demo">Solicitar demo Accesos →</a>
+        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-floating">
+    <div class="container">
+      <p>¿Listo para proteger tus instalaciones?</p>
+      <div style="display:flex;gap:8px;">
+        <a href="/demo?producto=accesos" class="btn btn-demo btn-sm">Solicitar demo →</a>
+        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
+      </div>
+    </div>
+  </div>
+  
+  <Footer slot="footer" />
+</BaseLayout>
