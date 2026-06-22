@@ -1,10 +1,5 @@
 ---
 import '../styles/style.css';
-import '../scripts/navigation.js';
-import '../scripts/modal.js';
-import '../scripts/animations.js';
-import '../scripts/forms.js';
-import '../scripts/video-player.js';
 
 export interface Props {
   title: string;
@@ -27,5 +22,12 @@ const { title, description, currentPage } = Astro.props;
   <slot name="header" />
   <slot />
   <slot name="footer" />
+  <script>
+    import '../scripts/navigation.js';
+    import '../scripts/modal.js';
+    import '../scripts/animations.js';
+    import '../scripts/forms.js';
+    import '../scripts/video-player.js';
+  </script>
 </body>
 </html>
