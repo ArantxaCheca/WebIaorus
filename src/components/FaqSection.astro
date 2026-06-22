@@ -1,0 +1,39 @@
+---
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  faqs: Faq[];
+  cta?: { text: string; href: string };
+}
+
+const { tag = 'FAQ', title = 'Respuestas rápidas', subtitle = 'Las dudas más frecuentes sobre IAORUS.', faqs, cta } = Astro.props;
+---
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">{tag}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div style="max-width:720px;margin:0 auto;">
+      {faqs.map((faq, i) => (
+        <div style={`border-bottom:1px solid var(--border);padding:16px 0;${i === faqs.length - 1 ? 'border-bottom:none;' : ''}`}>
+          <h4 style="color:var(--blue-dark);margin-bottom:4px;font-size:1rem;">{faq.question}</h4>
+          <p style="font-size:0.9rem;color:var(--gray-light);margin-bottom:0;">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+    {cta && (
+      <div style="text-align:center;margin-top:32px;">
+        <a href={cta.href} class="btn btn-outline-orange">{cta.text}</a>
+      </div>
+    )}
+  </div>
+</section>

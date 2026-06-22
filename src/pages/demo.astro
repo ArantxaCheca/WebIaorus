@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 const title = 'Solicitar Demo - IAORUS';
 const description = 'Solicita una demo personalizada de IAORUS y descubre cómo nuestro software inteligente puede transformar tu negocio.';
 const currentPage = '/demo';
@@ -10,117 +11,117 @@ const currentPage = '/demo';
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
 
-<section class="page-header">
-  <div class="container">
-    <h1>Solicitar Demo</h1>
-    <p>Descubre en una sesión personalizada cómo IAORUS puede generar el software que tu empresa necesita.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="demo-form">
-      <div style="text-align:center;margin-bottom:32px;">
-        <span class="section-tag">Personalizada y sin compromiso</span>
-        <p style="margin-top:12px;">Te mostraremos una demo adaptada a tu sector y necesidades. Recibirás además un pack de documentación informativa.</p>
-      </div>
-      <form id="demo-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label for="email">Dirección de correo electrónico *</label>
-            <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="telefono">Teléfono *</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-          </div>
-          <div class="form-group">
-            <label for="empresa">Empresa *</label>
-            <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="interes">¿En qué está interesado? *</label>
-            <select id="interes" name="interes" required>
-              <option value="">Selecciona una opción</option>
-              <option value="informacion">Quiero información</option>
-              <option value="demo">Quiero ver una demo</option>
-              <option value="presupuesto">Quiero un presupuesto</option>
-              <option value="proyecto">Tengo un proyecto en mente</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="producto">Producto / Servicio interesado *</label>
-            <select id="producto" name="producto" required>
-              <option value="">Selecciona un producto o servicio</option>
-              <optgroup label="Productos">
-                <option value="erp">IAORUS ERP</option>
-                <option value="bp360">IAORUS BP360</option>
-                <option value="gestia">Gest-IA</option>
-                <option value="iatask">IATask</option>
-                <option value="rrhh">APP RRHH</option>
-                <option value="accesos">Control de Accesos</option>
-                <option value="web">Desarrollo Web</option>
-              </optgroup>
-              <optgroup label="Servicios">
-                <option value="saas">Licencia SaaS</option>
-                <option value="medida">Desarrollo a Medida</option>
-                <option value="consultoria">Consultoría Tecnológica</option>
-                <option value="formacion">Formación</option>
-                <option value="implantacion">Implantación y Onboarding</option>
-                <option value="outsourcing">Outsourcing de Negocio</option>
-                <option value="soporte">Soporte y Mantenimiento</option>
-                <option value="marketplace">Marketplace de Módulos</option>
-              </optgroup>
-              <optgroup label="Soluciones por Sector">
-                <option value="industrial">Industrial</option>
-                <option value="retail">Retail</option>
-                <option value="servicios">Servicios Profesionales</option>
-                <option value="inmobiliario">Inmobiliario</option>
-              </optgroup>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="website">Website</label>
-          <input type="url" id="website" name="website" placeholder="https://tuempresa.com">
-        </div>
-        <button type="submit" class="btn btn-demo" style="width:100%;justify-content:center;padding:14px;font-size:1.05rem;">Enviar solicitud →</button>
-        <p style="text-align:center;font-size:0.8rem;color:var(--gray);margin-top:12px;">Te responderemos en menos de 24 horas hábiles. Sin compromiso.</p>
-      </form>
+  <section class="page-header">
+    <div class="container">
+      <h1>Solicitar Demo</h1>
+      <p>Descubre en una sesión personalizada cómo IAORUS puede generar el software que tu empresa necesita.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-light" style="text-align:center;">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;max-width:800px;margin:0 auto;">
-      <div>
-        <div style="font-size:2rem;font-weight:800;color:var(--orange);">&lt; 24h</div>
-        <p style="font-size:0.85rem;">Respuesta a tu solicitud</p>
-      </div>
-      <div>
-        <div style="font-size:2rem;font-weight:800;color:var(--orange);">45 min</div>
-        <p style="font-size:0.85rem;">Demo personalizada</p>
-      </div>
-      <div>
-        <div style="font-size:2rem;font-weight:800;color:var(--orange);">100%</div>
-        <p style="font-size:0.85rem;">Adaptada a tu sector</p>
-      </div>
-      <div>
-        <div style="font-size:2rem;font-weight:800;color:var(--orange);">Gratuita</div>
-        <p style="font-size:0.85rem;">Sin compromiso</p>
+  <section>
+    <div class="container">
+      <div class="demo-form">
+        <div style="text-align:center;margin-bottom:32px;">
+          <span class="section-tag">Personalizada y sin compromiso</span>
+          <p style="margin-top:12px;">Te mostraremos una demo adaptada a tu sector y necesidades. Recibirás además un pack de documentación informativa.</p>
+        </div>
+        <form id="demo-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Dirección de correo electrónico *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa *</label>
+              <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="interes">¿En qué está interesado? *</label>
+              <select id="interes" name="interes" required>
+                <option value="">Selecciona una opción</option>
+                <option value="informacion">Quiero información</option>
+                <option value="demo">Quiero ver una demo</option>
+                <option value="presupuesto">Quiero un presupuesto</option>
+                <option value="proyecto">Tengo un proyecto en mente</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="producto">Producto / Servicio interesado *</label>
+              <select id="producto" name="producto" required>
+                <option value="">Selecciona un producto o servicio</option>
+                <optgroup label="Productos">
+                  <option value="erp">IAORUS ERP</option>
+                  <option value="bp360">IAORUS BP360</option>
+                  <option value="gestia">Gest-IA</option>
+                  <option value="iatask">IATask</option>
+                  <option value="rrhh">APP RRHH</option>
+                  <option value="accesos">Control de Accesos</option>
+                  <option value="web">Desarrollo Web</option>
+                </optgroup>
+                <optgroup label="Servicios">
+                  <option value="saas">Licencia SaaS</option>
+                  <option value="medida">Desarrollo a Medida</option>
+                  <option value="consultoria">Consultoría Tecnológica</option>
+                  <option value="formacion">Formación</option>
+                  <option value="implantacion">Implantación y Onboarding</option>
+                  <option value="outsourcing">Outsourcing de Negocio</option>
+                  <option value="soporte">Soporte y Mantenimiento</option>
+                  <option value="marketplace">Marketplace de Módulos</option>
+                </optgroup>
+                <optgroup label="Soluciones por Sector">
+                  <option value="industrial">Industrial</option>
+                  <option value="retail">Retail</option>
+                  <option value="servicios">Servicios Profesionales</option>
+                  <option value="inmobiliario">Inmobiliario</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="https://tuempresa.com">
+          </div>
+          <button type="submit" class="btn btn-demo" style="width:100%;justify-content:center;padding:14px;font-size:1.05rem;">Enviar solicitud →</button>
+          <p style="text-align:center;font-size:0.8rem;color:var(--gray);margin-top:12px;">Te responderemos en menos de 24 horas hábiles. Sin compromiso.</p>
+        </form>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="bg-light" style="text-align:center;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;max-width:800px;margin:0 auto;">
+        <div>
+          <div style="font-size:2rem;font-weight:800;color:var(--orange);">&lt; 24h</div>
+          <p style="font-size:0.85rem;">Respuesta a tu solicitud</p>
+        </div>
+        <div>
+          <div style="font-size:2rem;font-weight:800;color:var(--orange);">45 min</div>
+          <p style="font-size:0.85rem;">Demo personalizada</p>
+        </div>
+        <div>
+          <div style="font-size:2rem;font-weight:800;color:var(--orange);">100%</div>
+          <p style="font-size:0.85rem;">Adaptada a tu sector</p>
+        </div>
+        <div>
+          <div style="font-size:2rem;font-weight:800;color:var(--orange);">Gratuita</div>
+          <p style="font-size:0.85rem;">Sin compromiso</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

@@ -1,4 +1,11 @@
 ---
+import '../styles/style.css';
+import '../scripts/navigation.js';
+import '../scripts/modal.js';
+import '../scripts/animations.js';
+import '../scripts/forms.js';
+import '../scripts/video-player.js';
+
 export interface Props {
   title: string;
   description: string;
@@ -15,13 +22,10 @@ const { title, description, currentPage } = Astro.props;
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <slot name="header" />
   <slot />
   <slot name="footer" />
-  <script is:inline src="/js/main.js"></script>
-  <script is:inline src="/js/video-player.js"></script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+---
+export interface Service {
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  services: Service[];
+  bgGray?: boolean;
+}
+
+const { tag = 'Servicios', title = 'Te acompañamos en todo el proceso', subtitle = 'No solo entregamos software: construimos relaciones a largo plazo.', services, bgGray } = Astro.props;
+---
+
+<section class={bgGray ? 'bg-gray' : ''}>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">{tag}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div class="services-grid">
+      {services.map(s => (
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </div>
+          <h3>{s.title}</h3>
+          <p>{s.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+export interface Props {
+  tag?: string;
+  title: string;
+  subtitle: string;
+  ctaPrimary: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  variant?: 'default' | 'inline' | 'floating' | 'landing-cta-section';
+}
+
+const { tag, title, subtitle, ctaPrimary, ctaSecondary, variant = 'default' } = Astro.props;
+---
+
+{
+  variant === 'inline' ? (
+    <div class="cta-inline" style="max-width:800px;margin:0 auto;">
+      <h3>{title}</h3>
+      <p>{subtitle}</p>
+      <a href={ctaPrimary.href} class="btn btn-orange">{ctaPrimary.text}</a>
+    </div>
+  ) : variant === 'landing-cta-section' ? (
+    <section class="landing-cta-section">
+      <div class="container">
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+        <div class="landing-cta-actions">
+          <a href={ctaPrimary.href} class="btn btn-demo btn-lg">{ctaPrimary.text}</a>
+          {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-outline-orange btn-lg">{ctaSecondary.text}</a>}
+        </div>
+      </div>
+    </section>
+  ) : variant === 'floating' ? (
+    <div class="cta-floating">
+      <div class="container">
+        <p>{title}</p>
+        <div style="display:flex;gap:8px;">
+          <a href={ctaPrimary.href} class="btn btn-demo btn-sm">{ctaPrimary.text}</a>
+          {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-outline-orange btn-sm">{ctaSecondary.text}</a>}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class="cta-block">
+      <div class="container">
+        {tag && <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">{tag}</span>}
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+        <div class="cta-actions">
+          <a href={ctaPrimary.href} class="btn btn-demo btn-lg">{ctaPrimary.text}</a>
+          {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-white">{ctaSecondary.text}</a>}
+        </div>
+      </div>
+    </div>
+  )
+}

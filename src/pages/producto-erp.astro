@@ -2,28 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+
 const title = 'IAORUS ERP - El centro de operaciones de tu empresa';
 const description = 'Gestiona tu empresa desde un solo lugar: compras, ventas, almacén, finanzas, RRHH, proyectos y CRM.';
 const currentPage = '/producto-erp';
+const p = { key: 'erp', tag: 'Producto', name: 'IAORUS ERP', desc: 'El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel.', video: 'VIDEO_ID_ERP', thumb: 'thumb-erp', fb: 'ERP', img: 'pexels-kampus-8353815.jpg' };
+const features = [
+  { title: 'Gestión completa', desc: 'Compras, ventas, almacén, finanzas y RRHH' },
+  { title: 'CRM integrado', desc: 'Gestiona clientes y oportunidades de venta' },
+  { title: 'Datos en tiempo real', desc: 'Dashboards con indicadores clave actualizados' },
+  { title: 'Automatización IA', desc: 'Reduce tareas manuales hasta un 70%' }
+];
+const benefits = [
+  { title: 'Integración total', desc: 'Todos tus departamentos conectados en una sola plataforma' },
+  { title: 'Datos en tiempo real', desc: 'Toma decisiones con información actualizada al instante' },
+  { title: 'Automatización inteligente', desc: 'Reduce tareas manuales hasta un 70%' },
+  { title: 'Escalabilidad real', desc: 'Crece sin límites, la plataforma se adapta a ti' }
+];
+const steps = [
+  { number: '1', title: 'Configuramos', description: 'Adaptamos IAORUS a tus procesos sin que cambies tu forma de trabajar' },
+  { number: '2', title: 'Conectamos', description: 'Integramos todos tus departamentos en una sola plataforma' },
+  { number: '3', title: 'Transformamos', description: 'Empieza a operar con más eficiencia desde el día uno' }
+];
+const demoHref = `/demo?producto=${p.key}`;
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
-  
+
   <section class="video-hero">
     <div class="video-hero-bg"></div>
     <div class="container">
       <div class="video-hero-content">
         <div class="video-hero-text">
           <span class="hero-tag">Producto</span>
-          <h1>IAORUS ERP</h1>
-          <p>El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel.</p>
+          <h1>{p.name}</h1>
+          <p>{p.desc}</p>
           <div class="hero-actions" style="justify-content:flex-start;">
-            <a href="/demo?producto=erp" class="btn btn-demo">Solicitar demo gratuita →</a>
+            <a href={demoHref} class="btn btn-demo">Solicitar demo gratuita →</a>
           </div>
         </div>
-        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_ERP', 'IAORUS ERP')">
-          <img src="/assets/images/thumbnails/thumb-erp.jpg" alt="IAORUS ERP" onerror="imgFallback(this,'ERP')">
+        <div class="video-thumb-wrapper" onclick={`openVideo('https://www.youtube.com/embed/${p.video}', '${p.name}')`}>
+          <img src={`/assets/images/thumbnails/${p.thumb}.jpg`} alt={p.name} onerror={`imgFallback(this,'${p.fb}')`}>
           <div class="video-thumb-overlay">
             <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
           </div>
@@ -36,32 +57,19 @@ const currentPage = '/producto-erp';
     <div class="container">
       <div class="split-grid">
         <div>
-          <img src="/assets/images/pexels-kampus-8353815.jpg" alt="Panel IAORUS ERP" class="img-section">
+          <img src={`/assets/images/${p.img}`} alt={`Panel ${p.name}`} class="img-section">
         </div>
         <div>
           <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Características</span>
           <h2>Características principales</h2>
           <div class="landing-benefits" style="grid-template-columns:1fr 1fr;">
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Gestión completa</h4>
-              <p>Compras, ventas, almacén, finanzas y RRHH</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>CRM integrado</h4>
-              <p>Gestiona clientes y oportunidades de venta</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Datos en tiempo real</h4>
-              <p>Dashboards con indicadores clave actualizados</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Automatización IA</h4>
-              <p>Reduce tareas manuales hasta un 70%</p>
-            </div>
+            {features.map(f => (
+              <div class="landing-benefit">
+                <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <h4>{f.title}</h4>
+                <p>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -72,30 +80,17 @@ const currentPage = '/producto-erp';
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
-        <h2>¿Por qué IAORUS ERP?</h2>
+        <h2>¿Por qué {p.name}?</h2>
         <p>Todo lo que necesitas para gestionar tu empresa, en un solo lugar.</p>
       </div>
       <div class="landing-benefits">
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Integración total</h4>
-          <p>Todos tus departamentos conectados en una sola plataforma</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Datos en tiempo real</h4>
-          <p>Toma decisiones con información actualizada al instante</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Automatización inteligente</h4>
-          <p>Reduce tareas manuales hasta un 70%</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Escalabilidad real</h4>
-          <p>Crece sin límites, la plataforma se adapta a ti</p>
-        </div>
+        {benefits.map(b => (
+          <div class="landing-benefit">
+            <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>{b.title}</h4>
+            <p>{b.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -105,7 +100,7 @@ const currentPage = '/producto-erp';
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Vídeo</span>
         <h2>Vídeo demostrativo</h2>
-        <p>Descubre cómo funciona IAORUS ERP en la práctica.</p>
+        <p>Descubre cómo funciona {p.name} en la práctica.</p>
       </div>
       <div class="video-placeholder">
         <div class="vp-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
@@ -122,45 +117,31 @@ const currentPage = '/producto-erp';
         <p>Te acompañamos en cada etapa para una transición sin fricción.</p>
       </div>
       <div class="landing-steps">
-        <div class="landing-step">
-          <div class="landing-step-num">1</div>
-          <h4>Configuramos</h4>
-          <p>Adaptamos IAORUS a tus procesos sin que cambies tu forma de trabajar</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">2</div>
-          <h4>Conectamos</h4>
-          <p>Integramos todos tus departamentos en una sola plataforma</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">3</div>
-          <h4>Transformamos</h4>
-          <p>Empieza a operar con más eficiencia desde el día uno</p>
-        </div>
+        {steps.map(s => (
+          <div class="landing-step">
+            <div class="landing-step-num">{s.number}</div>
+            <h4>{s.title}</h4>
+            <p>{s.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="landing-cta-section">
-    <div class="container">
-      <h2>¿Listo para transformar tu negocio?</h2>
-      <p>Solicita una demo personalizada y descubre cómo IAORUS ERP puede impulsar tu empresa.</p>
-      <div class="landing-cta-actions">
-        <a href="/demo?producto=erp" class="btn btn-demo">Solicitar demo gratuita →</a>
-        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
-      </div>
-    </div>
-  </section>
+  <CtaBlock
+    title="¿Listo para transformar tu negocio?"
+    subtitle={`Solicita una demo personalizada y descubre cómo ${p.name} puede impulsar tu empresa.`}
+    ctaPrimary={{ text: 'Solicitar demo gratuita →', href: demoHref }}
+    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
+    variant="landing-cta-section"
+  />
 
-  <div class="cta-floating">
-    <div class="container">
-      <p>¿Listo para transformar tu negocio?</p>
-      <div style="display:flex;gap:8px;">
-        <a href="/demo?producto=erp" class="btn btn-demo btn-sm">Solicitar demo →</a>
-        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
-      </div>
-    </div>
-  </div>
-  
+  <CtaBlock
+    variant="floating"
+    title="¿Listo para transformar tu negocio?"
+    ctaPrimary={{ text: 'Solicitar demo →', href: demoHref }}
+    ctaSecondary={{ text: 'Contactar', href: '/contacto' }}
+  />
+
   <Footer slot="footer" />
 </BaseLayout>

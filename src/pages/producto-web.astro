@@ -2,28 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const title = 'Desarrollo Web IAORUS - Webs y Tiendas Online';
-const description = 'Páginas web corporativas y tiendas online a medida. Diseño profesional y desarrollo ágil.';
+import CtaBlock from '../components/CtaBlock.astro';
+
+const title = 'Desarrollo Web - Páginas Web y Tiendas Online';
+const description = 'Tu web corporativa o tienda online a medida. Diseño profesional, desarrollo ágil y resultados que impulsan tu negocio.';
 const currentPage = '/producto-web';
+const p = { key: 'web', tag: 'Producto', name: 'Desarrollo Web', desc: 'Tu presencia online profesional. Páginas web corporativas y tiendas online diseñadas para convertir visitantes en clientes.', video: 'VIDEO_ID_WEB', thumb: 'thumb-web', fb: 'DW', img: 'pexels-kampus-8353815.jpg' };
+const features = [
+  { title: 'Diseño profesional', desc: 'Webs modernas y optimizadas para conversión' },
+  { title: 'E-commerce', desc: 'Tiendas online con pasarela de pago integrada' },
+  { title: 'SEO optimizado', desc: 'Posicionamiento orgánico desde el diseño' },
+  { title: 'Responsive', desc: 'Adaptado a todos los dispositivos' }
+];
+const benefits = [
+  { title: 'Presencia profesional', desc: 'La imagen que tu negocio merece' },
+  { title: 'Más clientes', desc: 'Diseñadas para convertir visitantes en ventas' },
+  { title: 'Rápido y ágil', desc: 'Desarrollo en semanas, no en meses' },
+  { title: 'Soporte continuo', desc: 'Mantenimiento y evolución constante' }
+];
+const steps = [
+  { number: '1', title: 'Diseñamos', description: 'Creamos el diseño conceptual y la experiencia de usuario' },
+  { number: '2', title: 'Desarrollamos', description: 'Construimos tu web con tecnología moderna' },
+  { number: '3', title: 'Lanzamos', description: 'Publicamos y optimizamos para resultados' }
+];
+const demoHref = `/demo?producto=${p.key}`;
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
-  
+
   <section class="video-hero">
     <div class="video-hero-bg"></div>
     <div class="container">
       <div class="video-hero-content">
         <div class="video-hero-text">
           <span class="hero-tag">Producto</span>
-          <h1>Desarrollo Web</h1>
-          <p>Tu presencia online profesional. Páginas web corporativas y tiendas online diseñadas para convertir visitantes en clientes.</p>
+          <h1>{p.name}</h1>
+          <p>{p.desc}</p>
           <div class="hero-actions" style="justify-content:flex-start;">
-            <a href="/demo?producto=web" class="btn btn-demo">Solicitar consultoría web →</a>
+            <a href={demoHref} class="btn btn-demo">Solicitar demo gratuita →</a>
           </div>
         </div>
-        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_WEB', 'Desarrollo Web')">
-          <img src="/assets/images/thumbnails/thumb-web.jpg" alt="Desarrollo Web" onerror="imgFallback(this,'DW')">
+        <div class="video-thumb-wrapper" onclick={`openVideo('https://www.youtube.com/embed/${p.video}', '${p.name}')`}>
+          <img src={`/assets/images/thumbnails/${p.thumb}.jpg`} alt={p.name} onerror={`imgFallback(this,'${p.fb}')`}>
           <div class="video-thumb-overlay">
             <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
           </div>
@@ -36,32 +57,19 @@ const currentPage = '/producto-web';
     <div class="container">
       <div class="split-grid">
         <div>
-          <img src="/assets/images/pexels-gustavo-fring-4872048.jpg" alt="Panel Desarrollo Web" class="img-section">
+          <img src={`/assets/images/${p.img}`} alt={`Panel ${p.name}`} class="img-section">
         </div>
         <div>
           <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Características</span>
           <h2>Características principales</h2>
           <div class="landing-benefits" style="grid-template-columns:1fr 1fr;">
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Diseño responsive</h4>
-              <p>Web adaptada a todos los dispositivos</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Optimización SEO</h4>
-              <p>Posicionamiento orgánico desde el día uno</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>CMS a medida</h4>
-              <p>Panel de administración adaptado a tu negocio</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Alto rendimiento</h4>
-              <p>Carga rápida y escalabilidad garantizada</p>
-            </div>
+            {features.map(f => (
+              <div class="landing-benefit">
+                <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <h4>{f.title}</h4>
+                <p>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -72,30 +80,16 @@ const currentPage = '/producto-web';
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
-        <h2>¿Por qué Desarrollo Web IAORUS?</h2>
-        <p>Tu web profesional, lista en semanas y diseñada para crecer contigo.</p>
+        <h2>¿Por qué {p.name}?</h2>
       </div>
       <div class="landing-benefits">
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Diseño profesional</h4>
-          <p>Webs que reflejan la calidad de tu negocio</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Optimización de conversión</h4>
-          <p>Diseñadas para convertir visitantes en clientes</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Desarrollo ágil</h4>
-          <p>Tu web lista en semanas, no en meses</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Integración total</h4>
-          <p>Conectada con tus herramientas de negocio</p>
-        </div>
+        {benefits.map(b => (
+          <div class="landing-benefit">
+            <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>{b.title}</h4>
+            <p>{b.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -105,7 +99,7 @@ const currentPage = '/producto-web';
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Vídeo</span>
         <h2>Vídeo demostrativo</h2>
-        <p>Descubre cómo funciona Desarrollo Web IAORUS en la práctica.</p>
+        <p>Descubre cómo funciona {p.name} en la práctica.</p>
       </div>
       <div class="video-placeholder">
         <div class="vp-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
@@ -118,49 +112,35 @@ const currentPage = '/producto-web';
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
-        <h2>Tu web en 3 pasos</h2>
-        <p>Un proceso ágil y transparente desde el briefing hasta el lanzamiento.</p>
+        <h2>Tu web profesional en 3 pasos</h2>
+        <p>Te acompañamos en cada etapa para una transición sin fricción.</p>
       </div>
       <div class="landing-steps">
-        <div class="landing-step">
-          <div class="landing-step-num">1</div>
-          <h4>Analizamos</h4>
-          <p>Entendemos tu negocio, tu marca y tus objetivos</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">2</div>
-          <h4>Diseñamos</h4>
-          <p>Creamos una web a medida centrada en tus usuarios</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">3</div>
-          <h4>Lanzamos</h4>
-          <p>Tu web online y lista para atraer clientes</p>
-        </div>
+        {steps.map(s => (
+          <div class="landing-step">
+            <div class="landing-step-num">{s.number}</div>
+            <h4>{s.title}</h4>
+            <p>{s.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="landing-cta-section">
-    <div class="container">
-      <h2>¿Listo para llevar tu negocio online?</h2>
-      <p>Solicita una consultoría gratuita y descubre cómo podemos ayudarte a crear la web que tu negocio merece.</p>
-      <div class="landing-cta-actions">
-        <a href="/demo?producto=web" class="btn btn-demo">Solicitar consultoría web →</a>
-        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
-      </div>
-    </div>
-  </section>
+  <CtaBlock
+    title="¿Listo para tener presencia online profesional?"
+    subtitle={`Solicita una demo personalizada y descubre cómo ${p.name} puede impulsar tu negocio.`}
+    ctaPrimary={{ text: 'Solicitar demo gratuita →', href: demoHref }}
+    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
+    variant="landing-cta-section"
+  />
 
-  <div class="cta-floating">
-    <div class="container">
-      <p>¿Listo para llevar tu negocio online?</p>
-      <div style="display:flex;gap:8px;">
-        <a href="/demo?producto=web" class="btn btn-demo btn-sm">Solicitar demo →</a>
-        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
-      </div>
-    </div>
-  </div>
-  
+  <CtaBlock
+    variant="floating"
+    title="¿Listo para transformar tu negocio?"
+    ctaPrimary={{ text: 'Solicitar demo →', href: demoHref }}
+    ctaSecondary={{ text: 'Contactar', href: '/contacto' }}
+  />
+
   <Footer slot="footer" />
 </BaseLayout>

@@ -1,0 +1,46 @@
+---
+export interface Testimonial {
+  initials: string;
+  name: string;
+  role: string;
+  text: string;
+  color?: 'blue' | 'orange';
+}
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  testimonials: Testimonial[];
+}
+
+const { tag = 'Testimonios', title = 'Lo que dicen nuestros clientes', subtitle = 'Empresas como la tuya ya confían en IAORUS para impulsar su negocio.', testimonials } = Astro.props;
+---
+
+<section style="background:var(--gray-bg);">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">{tag}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+      {testimonials.map(t => {
+        const bgColor = t.color === 'orange' ? 'var(--orange-light)' : 'var(--blue-light)';
+        const txtColor = t.color === 'orange' ? 'var(--orange)' : 'var(--blue)';
+        return (
+          <div style="background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+              <div style={`width:48px;height:48px;border-radius:50%;background:${bgColor};display:flex;align-items:center;justify-content:center;color:${txtColor};font-weight:700;font-size:1.1rem;`}>{t.initials}</div>
+              <div>
+                <strong style="color:var(--blue-dark);display:block;">{t.name}</strong>
+                <span style="font-size:0.8rem;color:var(--gray-light);">{t.role}</span>
+              </div>
+            </div>
+            <p style="font-size:0.9rem;color:var(--gray);font-style:italic;">"{t.text}"</p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

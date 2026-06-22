@@ -1,0 +1,38 @@
+---
+export interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  steps: Step[];
+  bgGray?: boolean;
+}
+
+const { tag, title, subtitle, steps, bgGray } = Astro.props;
+---
+
+<section class={bgGray ? 'bg-gray' : ''}>
+  <div class="container">
+    {tag && (
+      <div class="section-title">
+        {tag && <span class="section-tag">{tag}</span>}
+        {title && <h2>{title}</h2>}
+        {subtitle && <p>{subtitle}</p>}
+      </div>
+    )}
+    <div class="steps-grid">
+      {steps.map(s => (
+        <div class="step-card">
+          <div class="step-number">{s.number}</div>
+          <h4>{s.title}</h4>
+          <p>{s.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

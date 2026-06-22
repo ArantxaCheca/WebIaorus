@@ -1,0 +1,58 @@
+---
+export interface Props {
+  tag?: string;
+  title: string;
+  subtitle?: string;
+  bgImage?: string;
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  variant?: 'default' | 'page' | 'video';
+}
+
+const { tag, title, subtitle, bgImage, ctaPrimary, ctaSecondary, variant = 'default' } = Astro.props;
+---
+
+{
+  variant === 'page' ? (
+    <section class="page-header">
+      <div class="container">
+        {tag && <span class="section-tag section-tag-blue">{tag}</span>}
+        <h1>{title}</h1>
+        {subtitle && <p>{subtitle}</p>}
+        {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-demo">{ctaPrimary.text}</a>}
+      </div>
+    </section>
+  ) : variant === 'video' ? (
+    <section class="video-hero">
+      <div class="video-hero-bg"></div>
+      <div class="container">
+        <div class="video-hero-content">
+          <div class="video-hero-text">
+            {tag && <span class="hero-tag">{tag}</span>}
+            <h1>{title}</h1>
+            {subtitle && <p>{subtitle}</p>}
+          </div>
+          <slot name="media" />
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="hero">
+      {bgImage && <div class="hero-bg" style={`background-image:url('${bgImage}')`}></div>}
+      {!bgImage && <div class="hero-bg"></div>}
+      <div class="container">
+        <div class="hero-content">
+          {tag && <span class="hero-tag">{tag}</span>}
+          <h1 set:html={title} />
+          {subtitle && <p>{subtitle}</p>}
+          {(ctaPrimary || ctaSecondary) && (
+            <div class="hero-actions">
+              {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-demo btn-lg">{ctaPrimary.text}</a>}
+              {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-white">{ctaSecondary.text}</a>}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}

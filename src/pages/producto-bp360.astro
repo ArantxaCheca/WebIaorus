@@ -2,28 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const title = 'IAORUS BP360 - Plataforma Inteligente Inmobiliaria';
-const description = 'Centraliza activos, inversores, colaboradores y operaciones del sector inmobiliario.';
+import CtaBlock from '../components/CtaBlock.astro';
+
+const title = 'IAORUS BP360 - Plataforma Inmobiliaria Inteligente';
+const description = 'La plataforma inteligente para el sector inmobiliario. Gestiona activos, inversores y colaboradores con IA.';
 const currentPage = '/producto-bp360';
+const p = { key: 'bp360', tag: 'Producto', name: 'IAORUS BP360', desc: 'La plataforma inteligente para el sector inmobiliario. Centraliza activos, inversores, colaboradores y operaciones. Con web colaborativa y dashboards de IA.', video: 'VIDEO_ID_BP360', thumb: 'thumb-bp360', fb: 'BP', img: 'pexels-kampus-8353815.jpg' };
+const features = [
+  { title: 'Gestión de activos', desc: 'Centraliza tu cartera inmobiliaria completa' },
+  { title: 'Red colaborativa', desc: 'Portal web para inversores y colaboradores' },
+  { title: 'Dashboards IA', desc: 'Visualiza KPIs y tendencias del mercado' },
+  { title: 'Reporting automático', desc: 'Informes profesionales para inversores' }
+];
+const benefits = [
+  { title: 'Visibilidad total', desc: 'Toda tu cartera en un solo panel de control' },
+  { title: 'Colaboración en red', desc: 'Inversores y agentes conectados en tiempo real' },
+  { title: 'Decisiones con IA', desc: 'Análisis predictivo para oportunidades de negocio' },
+  { title: 'Profesionalización', desc: 'Opera con la excelencia de una gran gestora' }
+];
+const steps = [
+  { number: '1', title: 'Centralizamos', description: 'Cargamos tus activos y documentación en la plataforma' },
+  { number: '2', title: 'Conectamos', description: 'Damos acceso a inversores y colaboradores' },
+  { number: '3', title: 'Escalamos', description: 'Opera con inteligencia de negocio desde el día uno' }
+];
+const demoHref = `/demo?producto=${p.key}`;
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
-  
+
   <section class="video-hero">
     <div class="video-hero-bg"></div>
     <div class="container">
       <div class="video-hero-content">
         <div class="video-hero-text">
-          <span class="hero-tag">Producto / Inmobiliario</span>
-          <h1>IAORUS BP360</h1>
-          <p>La plataforma inteligente para el sector inmobiliario. Centraliza activos, inversores, colaboradores y operaciones.</p>
+          <span class="hero-tag">Producto</span>
+          <h1>{p.name}</h1>
+          <p>{p.desc}</p>
           <div class="hero-actions" style="justify-content:flex-start;">
-            <a href="/demo?producto=bp360" class="btn btn-demo">Solicitar demo BP360 →</a>
+            <a href={demoHref} class="btn btn-demo">Solicitar demo gratuita →</a>
           </div>
         </div>
-        <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_BP360', 'IAORUS BP360')">
-          <img src="/assets/images/thumbnails/thumb-bp360.jpg" alt="IAORUS BP360" onerror="imgFallback(this,'BP')">
+        <div class="video-thumb-wrapper" onclick={`openVideo('https://www.youtube.com/embed/${p.video}', '${p.name}')`}>
+          <img src={`/assets/images/thumbnails/${p.thumb}.jpg`} alt={p.name} onerror={`imgFallback(this,'${p.fb}')`}>
           <div class="video-thumb-overlay">
             <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
           </div>
@@ -36,32 +57,19 @@ const currentPage = '/producto-bp360';
     <div class="container">
       <div class="split-grid">
         <div>
-          <img src="/assets/images/pexels-kampus-8428091.jpg" alt="Panel IAORUS BP360" class="img-section">
+          <img src={`/assets/images/${p.img}`} alt={`Panel ${p.name}`} class="img-section">
         </div>
         <div>
           <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Características</span>
           <h2>Características principales</h2>
           <div class="landing-benefits" style="grid-template-columns:1fr 1fr;">
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Cartera centralizada</h4>
-              <p>Tus propiedades organizadas con toda su documentación</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Colaboración en red</h4>
-              <p>Trabaja con otros agentes sin duplicar información</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Automatización de tareas</h4>
-              <p>Recordatorios y seguimientos de cliente automáticos</p>
-            </div>
-            <div class="landing-benefit">
-              <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-              <h4>Informes inteligentes</h4>
-              <p>Análisis de mercado y rendimiento de cartera</p>
-            </div>
+            {features.map(f => (
+              <div class="landing-benefit">
+                <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <h4>{f.title}</h4>
+                <p>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -72,30 +80,16 @@ const currentPage = '/producto-bp360';
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
-        <h2>¿Por qué IAORUS BP360?</h2>
-        <p>Gestiona tu cartera inmobiliaria con inteligencia y eficiencia.</p>
+        <h2>¿Por qué {p.name}?</h2>
       </div>
       <div class="landing-benefits">
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Activos centralizados</h4>
-          <p>Toda tu cartera inmobiliaria en un solo lugar</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Red de colaboradores</h4>
-          <p>Trabaja en red sin duplicar esfuerzos</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Dashboards de IA</h4>
-          <p>Visualiza el rendimiento de tus activos con inteligencia artificial</p>
-        </div>
-        <div class="landing-benefit">
-          <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <h4>Gestión de inversores</h4>
-          <p>Reporting automático para tus inversores</p>
-        </div>
+        {benefits.map(b => (
+          <div class="landing-benefit">
+            <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>{b.title}</h4>
+            <p>{b.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -105,7 +99,7 @@ const currentPage = '/producto-bp360';
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Vídeo</span>
         <h2>Vídeo demostrativo</h2>
-        <p>Descubre cómo funciona IAORUS BP360 en la práctica.</p>
+        <p>Descubre cómo funciona {p.name} en la práctica.</p>
       </div>
       <div class="video-placeholder">
         <div class="vp-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
@@ -118,49 +112,35 @@ const currentPage = '/producto-bp360';
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
-        <h2>Tu plataforma inmobiliaria en 3 pasos</h2>
-        <p>Digitaliza tu gestoría inmobiliaria de forma rápida y sencilla.</p>
+        <h2>Tu nueva plataforma en 3 pasos</h2>
+        <p>Te acompañamos en cada etapa para una transición sin fricción.</p>
       </div>
       <div class="landing-steps">
-        <div class="landing-step">
-          <div class="landing-step-num">1</div>
-          <h4>Configuramos tu cartera</h4>
-          <p>Cargamos tus activos y documentación en la plataforma</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">2</div>
-          <h4>Conectamos tu red</h4>
-          <p>Damos acceso a colaboradores e inversores con roles personalizados</p>
-        </div>
-        <div class="landing-step">
-          <div class="landing-step-num">3</div>
-          <h4>Profesionalizas tu negocio</h4>
-          <p>Opera con la eficiencia de una gran gestora</p>
-        </div>
+        {steps.map(s => (
+          <div class="landing-step">
+            <div class="landing-step-num">{s.number}</div>
+            <h4>{s.title}</h4>
+            <p>{s.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="landing-cta-section">
-    <div class="container">
-      <h2>¿Listo para profesionalizar tu gestoría?</h2>
-      <p>Descubre cómo IAORUS BP360 puede transformar la gestión de tus activos inmobiliarios.</p>
-      <div class="landing-cta-actions">
-        <a href="/demo?producto=bp360" class="btn btn-demo">Solicitar demo BP360 →</a>
-        <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
-      </div>
-    </div>
-  </section>
+  <CtaBlock
+    title="¿Listo para profesionalizar tu gestión inmobiliaria?"
+    subtitle={`Solicita una demo personalizada y descubre cómo ${p.name} puede impulsar tu negocio.`}
+    ctaPrimary={{ text: 'Solicitar demo gratuita →', href: demoHref }}
+    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
+    variant="landing-cta-section"
+  />
 
-  <div class="cta-floating">
-    <div class="container">
-      <p>¿Listo para profesionalizar tu gestoría?</p>
-      <div style="display:flex;gap:8px;">
-        <a href="/demo?producto=bp360" class="btn btn-demo btn-sm">Solicitar demo →</a>
-        <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
-      </div>
-    </div>
-  </div>
-  
+  <CtaBlock
+    variant="floating"
+    title="¿Listo para transformar tu negocio?"
+    ctaPrimary={{ text: 'Solicitar demo →', href: demoHref }}
+    ctaSecondary={{ text: 'Contactar', href: '/contacto' }}
+  />
+
   <Footer slot="footer" />
 </BaseLayout>

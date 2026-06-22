@@ -1,0 +1,17 @@
+---
+export interface Props {
+  reverse?: boolean;
+  children: any;
+}
+
+const { reverse } = Astro.props;
+---
+
+<div class="split-grid" style={reverse ? 'direction:rtl;' : ''}>
+  <div style={reverse ? 'direction:ltr;' : ''}>
+    <slot name="content" />
+  </div>
+  <div style={reverse ? 'direction:ltr;' : ''}>
+    <slot name="media" />
+  </div>
+</div>

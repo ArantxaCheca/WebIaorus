@@ -2,155 +2,88 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ProductsGrid from '../components/ProductsGrid.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import StepsGrid from '../components/StepsGrid.astro';
+
 const title = 'Productos - IAORUS';
 const description = 'Productos IAORUS: ERP, BP360, Gest-IA, IATask, APP RRHH, Control de Accesos y Desarrollo Web. Soluciones inteligentes para tu empresa.';
 const currentPage = '/productos';
+
+const products = [
+  { id: 'erp', title: 'IAORUS ERP', description: 'El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel. Todo integrado, todo en tiempo real.', tags: ['Gestión empresarial', 'ERP', 'CRM', 'Integración'], icon: 'erp' },
+  { id: 'bp360', title: 'IAORUS BP360', description: 'La plataforma inteligente para el sector inmobiliario. Centraliza activos, inversores, colaboradores y operaciones. Con web colaborativa y dashboards de IA.', tags: ['Inmobiliario', 'IA', 'Inversiones'], icon: 'bp360' },
+  { id: 'gestia', title: 'Gest-IA', description: 'Olvídate de buscar documentos perdidos. Gest-IA organiza, clasifica y encuentra cualquier expediente en segundos. Con IA que aprende de tu forma de trabajar.', tags: ['Documentos', 'IA', 'Expedientes'], icon: 'gestia' },
+  { id: 'iatask', title: 'IATask', description: 'Controla la producción, las tareas y la asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa desde una plataforma unificada.', tags: ['Producción', 'Asistencia', 'Tiempos'], icon: 'iatask' },
+  { id: 'apprrhh', title: 'APP RRHH', description: 'Encuentra y retén el mejor talento. Tests, evaluaciones e informes con inteligencia artificial para tomar decisiones informadas sobre tu equipo.', tags: ['RRHH', 'Talento', 'Evaluación'], icon: 'rrhh' },
+  { id: 'accesos', title: 'Control de Accesos', description: 'Protege tus instalaciones con control de accesos inteligente. RFID, biometría y QR integrados con el ERP. Gestión centralizada desde un panel.', tags: ['Seguridad', 'Accesos', 'RFID'], icon: 'accesos' },
+  { id: 'web', title: 'Desarrollo Web', description: 'Tu presencia online profesional. Páginas web corporativas y tiendas online diseñadas para convertir visitantes en clientes.', tags: ['Web', 'E-commerce', 'Diseño'], icon: 'web' }
+];
+const problems = [
+  { title: 'Procesos manuales que ralentizan tu operativa', description: 'Automatiza tareas repetitivas y libera a tu equipo para lo que importa.' },
+  { title: 'Sistemas que no se comunican entre sí', description: 'Centraliza toda tu operación en una sola plataforma integrada.' },
+  { title: 'Falta de visibilidad en tiempo real', description: 'Toma decisiones informadas con datos actualizados al instante.' },
+  { title: 'Costes elevados de desarrollo a medida', description: 'Configura sin programar. IAORUS se adapta sin necesidad de grandes inversiones.' }
+];
+const steps = [
+  { number: '1', title: 'Se adapta a ti', description: 'Configuramos la plataforma según tus procesos, sin que tengas que cambiar tu forma de trabajar.' },
+  { number: '2', title: 'Aprende de tu negocio', description: 'El sistema analiza tu operativa diaria para identificar patrones y proponer mejoras.' },
+  { number: '3', title: 'Automatiza y mejora', description: 'Reduce tareas manuales, minimiza errores y acelera la toma de decisiones.' }
+];
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
 
   <section class="parallax-hero" style="background-image:url('/assets/images/pexels-kampus-8428091.jpg');">
-  <div class="container">
-    <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Productos</span>
-    <h1>Soluciones para cada necesidad</h1>
-    <p>Cada producto resuelve problemas reales de negocio. Todos funcionan juntos o por separado.</p>
-    <a href="/demo" class="btn btn-demo">Solicitar demo →</a>
-  </div>
-</section>
+    <div class="container">
+      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Productos</span>
+      <h1>Soluciones para cada necesidad</h1>
+      <p>Cada producto resuelve problemas reales de negocio. Todos funcionan juntos o por separado.</p>
+      <a href="/demo" class="btn btn-demo">Solicitar demo →</a>
+    </div>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-title" style="margin-bottom:32px;">
-      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Problemas que resolvemos</span>
-      <h2>¿Tu negocio enfrenta estos retos?</h2>
-      <p>Cada producto de IAORUS está diseñado para resolver un problema específico.</p>
+  <section>
+    <div class="container">
+      <div class="section-title" style="margin-bottom:32px;">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Problemas que resolvemos</span>
+        <h2>¿Tu negocio enfrenta estos retos?</h2>
+        <p>Cada producto de IAORUS está diseñado para resolver un problema específico.</p>
+      </div>
+      <div class="problems-grid" style="margin-bottom:56px;">
+        {problems.map(p => (
+          <div class="problem-card">
+            <h4>{p.title}</h4>
+            <p>{p.description}</p>
+          </div>
+        ))}
+      </div>
+      <ProductsGrid products={products} showSectionHeader={false} />
     </div>
-    <div class="problems-grid" style="margin-bottom:56px;">
-      <div class="problem-card">
-        <h4>Procesos manuales que ralentizan tu operativa</h4>
-        <p>Automatiza tareas repetitivas y libera a tu equipo para lo que importa.</p>
-      </div>
-      <div class="problem-card">
-        <h4>Sistemas que no se comunican entre sí</h4>
-        <p>Centraliza toda tu operación en una sola plataforma integrada.</p>
-      </div>
-      <div class="problem-card">
-        <h4>Falta de visibilidad en tiempo real</h4>
-        <p>Toma decisiones informadas con datos actualizados al instante.</p>
-      </div>
-      <div class="problem-card">
-        <h4>Costes elevados de desarrollo a medida</h4>
-        <p>Configura sin programar. IAORUS se adapta sin necesidad de grandes inversiones.</p>
-      </div>
-    </div>
+  </section>
 
-    <div class="products-grid">
-      <div class="product-card" onclick="openProductModal('erp')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3>IAORUS ERP</h3>
-        <p class="product-desc">El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel. Todo integrado, todo en tiempo real.</p>
-        <div class="product-tags"><span class="product-tag">Gestión empresarial</span><span class="product-tag">ERP</span><span class="product-tag">CRM</span><span class="product-tag">Integración</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-erp" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('bp360')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>IAORUS BP360</h3>
-        <p class="product-desc">La plataforma inteligente para el sector inmobiliario. Centraliza activos, inversores, colaboradores y operaciones. Con web colaborativa y dashboards de IA.</p>
-        <div class="product-tags"><span class="product-tag">Inmobiliario</span><span class="product-tag">IA</span><span class="product-tag">Inversiones</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-bp360" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('gestia')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
-        <h3>Gest-IA</h3>
-        <p class="product-desc">Olvídate de buscar documentos perdidos. Gest-IA organiza, clasifica y encuentra cualquier expediente en segundos. Con IA que aprende de tu forma de trabajar.</p>
-        <div class="product-tags"><span class="product-tag">Documentos</span><span class="product-tag">IA</span><span class="product-tag">Expedientes</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-gestia" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('iatask')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>IATask</h3>
-        <p class="product-desc">Controla la producción, las tareas y la asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa desde una plataforma unificada.</p>
-        <div class="product-tags"><span class="product-tag">Producción</span><span class="product-tag">Asistencia</span><span class="product-tag">Tiempos</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-iatask" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('apprrhh')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>APP RRHH</h3>
-        <p class="product-desc">Encuentra y retén el mejor talento. Tests, evaluaciones e informes con inteligencia artificial para tomar decisiones informadas sobre tu equipo.</p>
-        <div class="product-tags"><span class="product-tag">RRHH</span><span class="product-tag">Talento</span><span class="product-tag">Evaluación</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-apprrhh" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('accesos')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Control de Accesos</h3>
-        <p class="product-desc">Protege tus instalaciones con control de accesos inteligente. RFID, biometría y QR integrados con el ERP. Gestión centralizada desde un panel.</p>
-        <div class="product-tags"><span class="product-tag">Seguridad</span><span class="product-tag">Accesos</span><span class="product-tag">RFID</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-accesos" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-      <div class="product-card" onclick="openProductModal('web')">
-        <div class="product-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>Desarrollo Web</h3>
-        <p class="product-desc">Tu presencia online profesional. Páginas web corporativas y tiendas online diseñadas para convertir visitantes en clientes.</p>
-        <div class="product-tags"><span class="product-tag">Web</span><span class="product-tag">E-commerce</span><span class="product-tag">Diseño</span></div>
-        <span class="product-link">Ver documentación →</span>
-        <a href="/producto-web" class="product-link" style="margin-left:12px;" onclick="event.stopPropagation();">▶ Ver vídeo</a>
-      </div>
-    </div>
-  </div>
-</section>
+  <CtaBlock
+    variant="inline"
+    title="¿No sabes por dónde empezar?"
+    subtitle="Te ayudamos a elegir la combinación de productos ideal para tu empresa."
+    ctaPrimary={{ text: 'Hablar con un especialista →', href: '/demo' }}
+  />
 
-<div class="cta-inline" style="max-width:800px;margin:0 auto 80px;">
-    <h3>¿No sabes por dónde empezar?</h3>
-  <p>Te ayudamos a elegir la combinación de productos ideal para tu empresa.</p>
-  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-    <a href="/demo" class="btn btn-orange">Hablar con un especialista →</a>
-    <a href="/contacto" class="btn btn-outline-orange">Agendar una llamada</a>
-  </div>
-</div>
+  <StepsGrid
+    tag="Funcionalidad"
+    title="Cómo funciona IAORUS"
+    subtitle="Una plataforma que aprende de tu negocio para hacerlo más eficiente cada día."
+    steps={steps}
+    bgGray
+  />
 
-<section class="bg-gray">
-  <div class="container">
-    <div class="section-title">
-      <span class="section-tag">Funcionalidad</span>
-      <h2>Cómo funciona IAORUS</h2>
-      <p>Una plataforma que aprende de tu negocio para hacerlo más eficiente cada día.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h4>Se adapta a ti</h4>
-        <p>Configuramos la plataforma según tus procesos, sin que tengas que cambiar tu forma de trabajar.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h4>Aprende de tu negocio</h4>
-        <p>El sistema analiza tu operativa diaria para identificar patrones y proponer mejoras.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h4>Automatiza y mejora</h4>
-        <p>Reduce tareas manuales, minimiza errores y acelera la toma de decisiones.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cta-floating">
-  <div class="container">
-    <p>¿Necesitas ayuda para elegir?</p>
-    <div style="display:flex;gap:8px;">
-      <a href="/demo" class="btn btn-demo btn-sm">Solicitar demo →</a>
-      <a href="/contacto" class="btn btn-outline-orange btn-sm">Llamada</a>
-    </div>
-  </div>
-</div>
+  <CtaBlock
+    variant="floating"
+    title="¿Necesitas ayuda para elegir?"
+    ctaPrimary={{ text: 'Solicitar demo →', href: '/demo' }}
+    ctaSecondary={{ text: 'Llamada', href: '/contacto' }}
+  />
 
   <Footer slot="footer" />
 </BaseLayout>

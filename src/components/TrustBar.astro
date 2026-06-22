@@ -1,0 +1,20 @@
+---
+export interface Props {
+  items: { value: string; label: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<section style="padding:48px 0;">
+  <div class="container">
+    <div class="trust-bar">
+      {items.map(item => (
+        <div class="trust-item">
+          <div class="trust-value">{item.value}</div>
+          <div class="trust-label">{item.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

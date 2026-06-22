@@ -2,117 +2,110 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+
 const title = 'IAORUS Industrial - Automatización Industrial';
 const description = 'Sistema de gestión industrial que integra producción, trazabilidad y control de accesos.';
 const currentPage = '/solucion-industrial';
+const productKey = 'industrial';
+const productTag = 'Industrial';
+const productTitle = 'IAORUS Industrial';
+const productDesc = 'Automatiza tu planta y optimiza la producción. Integra producción, trazabilidad y control de accesos en una sola plataforma.';
+const videoUrl = 'https://www.youtube.com/embed/VIDEO_ID_INDUSTRIAL';
+const thumb = 'thumb-industrial';
+const thumbFallback = 'IND';
+const benefits = [
+  { title: 'Producción optimizada', desc: 'Automatiza procesos y reduce tiempos de fabricación' },
+  { title: 'Trazabilidad total', desc: 'Controla cada lote y material desde origen hasta entrega' },
+  { title: 'Control de accesos', desc: 'Gestiona quién, cuándo y dónde accede a cada área' },
+  { title: 'Datos en tiempo real', desc: 'Panel central con KPIs actualizados al instante' }
+];
+const steps = [
+  { number: '1', title: 'Diagnosticamos tu planta', description: 'Analizamos tus procesos productivos e identificamos oportunidades de mejora' },
+  { number: '2', title: 'Configuramos la solución', description: 'Adaptamos IAORUS Industrial a tu operativa sin cambiar tu forma de trabajar' },
+  { number: '3', title: 'Automatizas y escalas', description: 'Opera con eficiencia y escala tu producción sin límites' }
+];
+const ctaTitle = '¿Listo para automatizar tu planta?';
+const ctaSub = 'Descubre cómo IAORUS Industrial puede transformar tu producción.';
+const demoHref = `/demo?producto=${productKey}`;
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
 
   <section class="video-hero">
-  <div class="video-hero-bg"></div>
-  <div class="container">
-    <div class="video-hero-content">
-      <div class="video-hero-text">
-        <span class="hero-tag">Solución / Industrial</span>
-        <h1>IAORUS Industrial</h1>
-        <p>Automatiza tu planta y optimiza la producción. Integra producción, trazabilidad y control de accesos en una sola plataforma.</p>
-        <div class="hero-actions" style="justify-content:flex-start;">
-          <a href="/demo?producto=industrial" class="btn btn-demo">Solicitar demo Industrial →</a>
-          <a href="/contacto" class="btn btn-outline-orange">Agendar reunión</a>
+    <div class="video-hero-bg"></div>
+    <div class="container">
+      <div class="video-hero-content">
+        <div class="video-hero-text">
+          <span class="hero-tag" style="background:rgba(244,121,32,0.2);border-color:rgba(244,121,32,0.3);">Solución / {productTag}</span>
+          <h1>{productTitle}</h1>
+          <p>{productDesc}</p>
+          <div class="hero-actions" style="justify-content:flex-start;">
+            <a href={demoHref} class="btn btn-demo btn-lg">Solicitar demo {productTag} →</a>
+            <a href="/contacto" class="btn btn-outline-orange btn-lg">Hablar con un especialista</a>
+          </div>
+        </div>
+        <div class="video-thumb-wrapper" onclick={`openVideo('${videoUrl}', '${productTitle}')`}>
+          <img src={`/assets/images/thumbnails/${thumb}.jpg`} alt={productTitle} onerror={`imgFallback(this,'${thumbFallback}')`}>
+          <div class="video-thumb-overlay">
+            <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          </div>
         </div>
       </div>
-      <div class="video-thumb-wrapper" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_INDUSTRIAL', 'IAORUS Industrial')">
-        <img src="/assets/images/thumbnails/thumb-industrial.jpg" alt="IAORUS Industrial" onerror="imgFallback(this,'IND')">
-        <div class="video-thumb-overlay">
-          <div class="play-btn"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-title">
-      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
-      <h2>¿Por qué IAORUS Industrial?</h2>
-      <p>Automatiza, controla y optimiza tu planta de producción.</p>
-    </div>
-    <div class="landing-benefits">
-      <div class="landing-benefit">
-        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h4>Automatización de procesos</h4>
-        <p>Elimina tareas manuales en tu planta de producción</p>
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
+        <h2>¿Por qué {productTitle}?</h2>
       </div>
-      <div class="landing-benefit">
-        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h4>Trazabilidad completa</h4>
-        <p>Controla cada lote y material desde el origen hasta la entrega</p>
-      </div>
-      <div class="landing-benefit">
-        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h4>Control de accesos integrado</h4>
-        <p>RFID, biometría y QR conectados con tu ERP</p>
-      </div>
-      <div class="landing-benefit">
-        <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h4>Reducción de mermas</h4>
-        <p>Minimiza errores y pérdidas en producción</p>
+      <div class="landing-benefits">
+        {benefits.map(b => (
+          <div class="landing-benefit">
+            <div class="landing-benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>{b.title}</h4>
+            <p>{b.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-gray">
-  <div class="container">
-    <div class="section-title">
-      <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
-      <h2>Tu fábrica inteligente en 3 pasos</h2>
-      <p>Transformamos tu planta paso a paso.</p>
-    </div>
-    <div class="landing-steps">
-      <div class="landing-step">
-        <div class="landing-step-num">1</div>
-        <h4>Diagnosticamos</h4>
-        <p>Analizamos tu planta y procesos productivos</p>
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Cómo funciona</span>
+        <h2>Implementación en 3 pasos</h2>
       </div>
-      <div class="landing-step">
-        <div class="landing-step-num">2</div>
-        <h4>Integramos</h4>
-        <p>Conectamos producción, almacén, accesos y gestión</p>
-      </div>
-      <div class="landing-step">
-        <div class="landing-step-num">3</div>
-        <h4>Automatizamos</h4>
-        <p>Tu planta operando con eficiencia en tiempo real</p>
+      <div class="landing-steps">
+        {steps.map(s => (
+          <div class="landing-step">
+            <div class="landing-step-num">{s.number}</div>
+            <h4>{s.title}</h4>
+            <p>{s.description}</p>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="landing-cta-section">
-  <div class="container">
-    <h2>¿Listo para automatizar tu planta?</h2>
-    <p>Descubre cómo IAORUS Industrial puede transformar tu producción.</p>
-    <div class="landing-cta-actions">
-      <a href="/demo?producto=industrial" class="btn btn-demo">Solicitar demo Industrial →</a>
-      <a href="/contacto" class="btn btn-outline-orange">Hablar con un especialista</a>
-      <a href="/contacto" class="btn btn-outline-orange">Agendar reunión</a>
-    </div>
-  </div>
-</section>
+  <CtaBlock
+    title={ctaTitle}
+    subtitle={ctaSub}
+    ctaPrimary={{ text: `Solicitar demo ${productTag} →`, href: demoHref }}
+    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
+    variant="landing-cta-section"
+  />
 
-<div class="cta-floating">
-  <div class="container">
-    <p>¿Listo para automatizar tu planta?</p>
-    <div style="display:flex;gap:8px;">
-      <a href="/demo?producto=industrial" class="btn btn-demo btn-sm">Solicitar demo →</a>
-      <a href="/contacto" class="btn btn-outline-orange btn-sm">Contactar</a>
-    </div>
-  </div>
-</div>
+  <CtaBlock
+    variant="floating"
+    title="¿Listo para automatizar tu planta?"
+    ctaPrimary={{ text: 'Solicitar demo →', href: demoHref }}
+    ctaSecondary={{ text: 'Contactar', href: '/contacto' }}
+  />
 
   <Footer slot="footer" />
 </BaseLayout>

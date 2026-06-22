@@ -1,0 +1,41 @@
+---
+export interface Props {
+  tag: string;
+  title: string;
+  subtitle: string;
+  benefits: { icon: string; title: string; description: string }[];
+  bgGray?: boolean;
+}
+
+const { tag, title, subtitle, benefits, bgGray } = Astro.props;
+
+const icons: Record<string, string> = {
+  zap: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+  clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  chart: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  activity: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+  mic: '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>'
+};
+---
+
+<section class={bgGray ? 'bg-gray' : ''}>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">{tag}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div class="benefits-grid">
+      {benefits.map(b => (
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[b.icon] || icons.zap} />
+          </div>
+          <h4>{b.title}</h4>
+          <p>{b.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -2,164 +2,59 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 const title = 'Vídeos - IAORUS';
 const description = 'Biblioteca de vídeos corporativos, demostraciones de productos y soluciones por sector IAORUS.';
 const currentPage = '/recursos-audiovisuales';
+const videos = [
+  { category: 'producto', videoId: 'VIDEO_ID_ERP', title: 'IAORUS ERP', desc: 'El centro de operaciones de tu empresa. Gestión integral con inteligencia de negocio.', thumb: 'thumb-erp', fallback: 'ERP' },
+  { category: 'producto', videoId: 'VIDEO_ID_BP360', title: 'IAORUS BP360', desc: 'Plataforma inteligente para el sector inmobiliario con IA integrada.', thumb: 'thumb-bp360', fallback: 'BP' },
+  { category: 'producto', videoId: 'VIDEO_ID_GESTIA', title: 'Gest-IA', desc: 'Gestión inteligente de documentos y expedientes con inteligencia artificial.', thumb: 'thumb-gestia', fallback: 'GI' },
+  { category: 'producto', videoId: 'VIDEO_ID_IATASK', title: 'IATask', desc: 'Control de producción, tareas y asistencia en una plataforma unificada.', thumb: 'thumb-iatask', fallback: 'IT' },
+  { category: 'producto', videoId: 'VIDEO_ID_APRRHH', title: 'APP RRHH', desc: 'Evaluación de talento con IA y metodología científica.', thumb: 'thumb-apprrhh', fallback: 'RH' },
+  { category: 'producto', videoId: 'VIDEO_ID_ACCESOS', title: 'Control de Accesos', desc: 'Control de accesos inteligente con RFID, biometría y QR.', thumb: 'thumb-accesos', fallback: 'CA' },
+  { category: 'producto', videoId: 'VIDEO_ID_WEB', title: 'Desarrollo Web', desc: 'Páginas web corporativas y tiendas online a medida.', thumb: 'thumb-web', fallback: 'DW' },
+  { category: 'solucion', videoId: 'VIDEO_ID_INDUSTRIAL', title: 'Industrial', desc: 'Solución para la gestión industrial y optimización de procesos productivos.', thumb: 'thumb-industrial', fallback: 'IND' },
+  { category: 'solucion', videoId: 'VIDEO_ID_RETAIL', title: 'Retail', desc: 'Gestión comercial inteligente para tiendas y canales online.', thumb: 'thumb-retail', fallback: 'RET' },
+  { category: 'solucion', videoId: 'VIDEO_ID_SERVICIOS', title: 'Servicios Profesionales', desc: 'Control de proyectos, facturación y rentabilidad para consultoras.', thumb: 'thumb-servicios', fallback: 'SP' },
+  { category: 'solucion', videoId: 'VIDEO_ID_INMOBILIARIO', title: 'Inmobiliario', desc: 'Centraliza activos, inversores y colaboradores del sector inmobiliario.', thumb: 'thumb-inmobiliario', fallback: 'INM' }
+];
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
   <Header slot="header" currentPage={currentPage} />
 
   <section class="video-page-header">
-  <div class="container">
-    <h1>Recursos Audiovisuales</h1>
-    <p>Biblioteca de vídeos corporativos. Conoce nuestros productos y soluciones en acción.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterVideos('all')">Todos</button>
-      <button class="filter-btn" onclick="filterVideos('producto')">Productos</button>
-      <button class="filter-btn" onclick="filterVideos('solucion')">Soluciones</button>
+    <div class="container">
+      <h1>Recursos Audiovisuales</h1>
+      <p>Biblioteca de vídeos corporativos. Conoce nuestros productos y soluciones en acción.</p>
     </div>
-    <div class="video-cards-grid">
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_ERP', 'IAORUS ERP')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-erp.jpg" alt="IAORUS ERP" loading="lazy" onerror="imgFallback(this,'ERP')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>IAORUS ERP</h3>
-          <p>El centro de operaciones de tu empresa. Gestión integral con inteligencia de negocio.</p>
-        </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterResources('all')">Todos</button>
+        <button class="filter-btn" onclick="filterResources('producto')">Productos</button>
+        <button class="filter-btn" onclick="filterResources('solucion')">Soluciones</button>
       </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_BP360', 'IAORUS BP360')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-bp360.jpg" alt="IAORUS BP360" loading="lazy" onerror="imgFallback(this,'BP')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>IAORUS BP360</h3>
-          <p>Plataforma inteligente para el sector inmobiliario con IA integrada.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_GESTIA', 'Gest-IA')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-gestia.jpg" alt="Gest-IA" loading="lazy" onerror="imgFallback(this,'GI')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>Gest-IA</h3>
-          <p>Gestión inteligente de documentos y expedientes con inteligencia artificial.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_IATASK', 'IATask')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-iatask.jpg" alt="IATask" loading="lazy" onerror="imgFallback(this,'IT')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>IATask</h3>
-          <p>Control de producción, tareas y asistencia en una plataforma unificada.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_APRRHH', 'APP RRHH')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-apprrhh.jpg" alt="APP RRHH" loading="lazy" onerror="imgFallback(this,'RH')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>APP RRHH</h3>
-          <p>Evaluación de talento con IA y metodología científica.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_ACCESOS', 'Control de Accesos')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-accesos.jpg" alt="Control de Accesos" loading="lazy" onerror="imgFallback(this,'CA')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>Control de Accesos</h3>
-          <p>Control de accesos inteligente con RFID, biometría y QR.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="producto" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_WEB', 'Desarrollo Web')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-web.jpg" alt="Desarrollo Web" loading="lazy" onerror="imgFallback(this,'DW')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Producto</span>
-          <h3>Desarrollo Web</h3>
-          <p>Páginas web corporativas y tiendas online a medida.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="solucion" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_INDUSTRIAL', 'Industrial')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-industrial.jpg" alt="Industrial" loading="lazy" onerror="imgFallback(this,'IND')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Solución</span>
-          <h3>Industrial</h3>
-          <p>Solución para la gestión industrial y optimización de procesos productivos.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="solucion" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_RETAIL', 'Retail')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-retail.jpg" alt="Retail" loading="lazy" onerror="imgFallback(this,'RET')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Solución</span>
-          <h3>Retail</h3>
-          <p>Gestión comercial inteligente para tiendas y canales online.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="solucion" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_SERVICIOS', 'Servicios Profesionales')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-servicios.jpg" alt="Servicios Profesionales" loading="lazy" onerror="imgFallback(this,'SP')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Solución</span>
-          <h3>Servicios Profesionales</h3>
-          <p>Control de proyectos, facturación y rentabilidad para consultoras.</p>
-        </div>
-      </div>
-      <div class="video-card" data-category="solucion" onclick="openVideo('https://www.youtube.com/embed/VIDEO_ID_INMOBILIARIO', 'Inmobiliario')">
-        <div class="video-card-thumb">
-          <img src="/assets/images/thumbnails/thumb-inmobiliario.jpg" alt="Inmobiliario" loading="lazy" onerror="imgFallback(this,'INM')">
-          <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        <div class="video-card-body">
-          <span class="video-card-tag">Solución</span>
-          <h3>Inmobiliario</h3>
-          <p>Centraliza activos, inversores y colaboradores del sector inmobiliario.</p>
-        </div>
+      <div class="video-cards-grid">
+        {videos.map(v => (
+          <div class="video-card" data-category={v.category} onclick={`openVideo('https://www.youtube.com/embed/${v.videoId}', '${v.title}')`}>
+            <div class="video-card-thumb">
+              <img src={`/assets/images/thumbnails/${v.thumb}.jpg`} alt={v.title} loading="lazy" onerror={`imgFallback(this,'${v.fallback}')`}>
+              <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="video-card-body">
+              <span class="video-card-tag">{v.category === 'producto' ? 'Producto' : 'Solución'}</span>
+              <h3>{v.title}</h3>
+              <p>{v.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-</section>
-
-<script>
-function filterVideos(category) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.video-card').forEach(card => {
-    const cats = card.dataset.category || '';
-    card.style.display = (!category || category === 'all' || cats.split(',').includes(category)) ? 'block' : 'none';
-  });
-}
-</script>
+  </section>
 
   <Footer slot="footer" />
 </BaseLayout>

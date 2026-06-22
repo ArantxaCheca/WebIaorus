@@ -1,0 +1,55 @@
+---
+export interface Sector {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+}
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  sectors: Sector[];
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  bgGray?: boolean;
+}
+
+const { tag = 'Sectores', title = 'Soluciones para tu industria', subtitle = 'Cada sector tiene sus propios desafíos. IAORUS se adapta a ellos.', sectors, ctaPrimary, ctaSecondary, bgGray } = Astro.props;
+
+const icons: Record<string, string> = {
+  industrial: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+  retail: '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+  servicios: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>',
+  inmobiliario: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>'
+};
+---
+
+<section class={bgGray ? 'bg-gray' : ''}>
+  <div class="container">
+    <div class="section-title">
+      <span class="section-tag">{tag}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div class="sectors-grid">
+      {sectors.map(s => (
+        <a href={s.href} class="sector-card" style="text-decoration:none;display:block;">
+          <div class="sector-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[s.icon] || icons.industrial} />
+          </div>
+          <h4>{s.title}</h4>
+          <p>{s.description}</p>
+          <span class="sector-link">Ver solución →</span>
+        </a>
+      ))}
+    </div>
+    {(ctaPrimary || ctaSecondary) && (
+      <div style="text-align:center;margin-top:32px;">
+        {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-outline-orange" style="margin-right:12px;">{ctaPrimary.text}</a>}
+        {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-blue">{ctaSecondary.text}</a>}
+      </div>
+    )}
+  </div>
+</section>
