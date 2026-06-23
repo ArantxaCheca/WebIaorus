@@ -3,28 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
-import ProblemsGrid from '../components/ProblemsGrid.astro';
 import TrustBar from '../components/TrustBar.astro';
 import BenefitsGrid from '../components/BenefitsGrid.astro';
 import ProductsGrid from '../components/ProductsGrid.astro';
 import SectorsGrid from '../components/SectorsGrid.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import CtaBlock from '../components/CtaBlock.astro';
-import Testimonials from '../components/Testimonials.astro';
-import FaqSection from '../components/FaqSection.astro';
 
 const title = 'IAORUS - El software que se adapta a tu negocio';
 const description = 'IAORUS: software empresarial inteligente que se adapta a tu forma de trabajar. ERP, CRM, Control de Accesos y más. Solicita una demo.';
 const currentPage = '/';
 
-const problems = [
-  { title: 'Procesos lentos y manuales', description: 'Tu equipo pierde horas en tareas repetitivas que podrían automatizarse.' },
-  { title: 'Sistemas que no se comunican', description: 'Tienes datos en varias herramientas que no hablan entre sí.' },
-  { title: 'Software que no se adapta', description: 'Los programas tradicionales son rígidos y no encajan con tu forma de trabajar.' },
-  { title: 'Costes tecnológicos elevados', description: 'El desarrollo a medida tradicional es caro y lento.' },
-  { title: 'Falta de visibilidad', description: 'No tienes una visión clara y en tiempo real de tu negocio.' },
-  { title: 'Crecimiento estancado', description: 'Tu tecnología actual no escala al ritmo de tu empresa.' }
-];
 const trustItems = [
   { value: '+200', label: 'Empresas confían en IAORUS' },
   { value: '97%', label: 'Satisfacción de clientes' },
@@ -62,18 +51,6 @@ const services = [
   { title: 'Outsourcing', description: 'Externaliza procesos con tecnología y equipo dedicado para escalar sin crecer en estructura.' },
   { title: 'Soporte Premium', description: 'Atención prioritaria, mantenimiento continuo y evolución constante de la plataforma.' }
 ];
-const testimonials = [
-  { initials: 'CM', name: 'Carlos Méndez', role: 'Director de Operaciones · logística', text: 'Redujimos un 40% el tiempo de gestión de almacén. IAORUS se adaptó a nuestros procesos sin que tuviéramos que cambiar nuestra forma de trabajar.' },
-  { initials: 'AB', name: 'Ana Beltrán', role: 'CEO · retail', text: 'Unificamos tienda online y física con IAORUS. Ahora tenemos visibilidad total del stock y las ventas en tiempo real.', color: 'orange' },
-  { initials: 'MR', name: 'Miguel Ángel Ruiz', role: 'Gerente · consultoría', text: 'Facturamos un 30% más rápido gracias a la automatización. El equipo de IAORUS nos acompañó en cada paso del proceso.' }
-];
-const faqs = [
-  { question: '¿IAORUS sirve para mi tipo de empresa?', answer: 'IAORUS está diseñado para pymes y empresas en crecimiento de cualquier sector: industrial, retail, servicios, inmobiliario y más. Se adapta a tus procesos, no al revés.' },
-  { question: '¿Cuánto tiempo lleva implantar IAORUS?', answer: 'En menos de 72 horas tu solución puede estar funcionando. Al ser configurable, no requiere largos desarrollos ni esperas.' },
-  { question: '¿Necesito conocimientos técnicos para usarlo?', answer: 'No. IAORUS está diseñado para que cualquier persona de tu equipo pueda usarlo desde el primer día. Incluimos formación y acompañamiento.' },
-  { question: '¿Puedo probar IAORUS antes de comprarlo?', answer: 'Sí. Solicita una demo personalizada y te mostraremos cómo IAORUS puede ayudarte. Sin compromiso y adaptada a tu sector.' },
-  { question: '¿Qué incluye el soporte?', answer: 'Soporte técnico especializado, mantenimiento continuo, actualizaciones periódicas y formación para tu equipo. Estamos contigo en cada etapa.' }
-];
 ---
 
 <BaseLayout title={title} description={description} currentPage={currentPage}>
@@ -84,15 +61,7 @@ const faqs = [
     title='El software que se adapta a tu negocio, <span class="highlight">no al revés</span>'
     subtitle="IAORUS aprende de tu empresa para automatizar tareas, reducir costes y ayudarte a tomar mejores decisiones. Todo en una plataforma que crece contigo."
     ctaPrimary={{ text: 'Solicitar demo gratuita →', href: '/demo' }}
-    ctaSecondary={{ text: 'Agendar llamada →', href: '/contacto' }}
-  />
-
-  <ProblemsGrid
-    tag="Problemas que resolvemos"
-    title="¿Te suena alguna de estas situaciones?"
-    subtitle="Si tu empresa enfrenta estos desafíos, IAORUS puede ayudarte."
-    problems={problems}
-    cta={{ text: 'Quiero solucionarlo →', href: '/demo' }}
+    ctaSecondary={{ text: 'Contacta con nosotros', href: '/contacto' }}
   />
 
   <TrustBar items={trustItems} />
@@ -105,58 +74,7 @@ const faqs = [
     bgGray
   />
 
-  <CtaBlock
-    tag="Transformación digital"
-    title="¿Hablamos sobre tu proyecto?"
-    subtitle="Cuéntanos qué necesitas y te mostraremos cómo IAORUS puede ayudarte en una demo personalizada sin compromiso."
-    ctaPrimary={{ text: 'Solicitar demo gratuita →', href: '/demo' }}
-    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
-  />
-
   <ProductsGrid tag="Productos" title="Todo lo que necesitas en un solo ecosistema" subtitle="Módulos inteligentes que funcionan juntos o por separado. Cada uno diseñado para resolver problemas reales de negocio." products={products} />
-
-  <CtaBlock
-    variant="inline"
-    title="¿No sabes qué producto necesitas?"
-    subtitle="Te ayudamos a identificar la mejor solución para tu empresa en una llamada de 15 minutos."
-    ctaPrimary={{ text: 'Hablar con un especialista →', href: '/demo' }}
-  />
-
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <span class="section-tag">Cómo funciona</span>
-        <h2>Empezar es más fácil de lo que crees</h2>
-        <p>En tres pasos tendrás tu solución funcionando.</p>
-      </div>
-      <div class="split-grid">
-        <div>
-          <div class="steps-grid" style="grid-template-columns:1fr;">
-            <div class="step-card" style="text-align:left;padding:24px 0;">
-              <div class="step-number" style="margin:0 0 12px 0;">1</div>
-              <h4>Cuéntanos tu situación</h4>
-              <p>Hablamos contigo para entender tu negocio, tus procesos y lo que necesitas mejorar.</p>
-            </div>
-            <div class="step-card" style="text-align:left;padding:24px 0;">
-              <div class="step-number" style="margin:0 0 12px 0;">2</div>
-              <h4>Configuramos tu solución</h4>
-              <p>Adaptamos IAORUS a tu forma de trabajar. Sin desarrollos complejos ni esperas.</p>
-            </div>
-            <div class="step-card" style="text-align:left;padding:24px 0;">
-              <div class="step-number" style="margin:0 0 12px 0;">3</div>
-              <h4>Transforma tu negocio</h4>
-              <p>Empieza a operar con más eficiencia. Te acompañamos en todo el proceso.</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="image-card" style="height:380px;">
-            <img src="/assets/images/pexels-kampus-8353834.jpg" alt="Equipo empresarial colaborando" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <SectorsGrid
     sectors={sectors}
@@ -167,22 +85,18 @@ const faqs = [
 
   <ServicesGrid services={services} />
 
-  <Testimonials testimonials={testimonials} />
-
-  <FaqSection faqs={faqs} cta={{ text: 'Solicitar información →', href: '/contacto' }} />
-
   <CtaBlock
     title="Empieza hoy tu transformación digital"
     subtitle="Solicita una demo personalizada y descubre cómo IAORUS puede impulsar tu negocio."
     ctaPrimary={{ text: 'Solicitar demo gratuita →', href: '/demo' }}
-    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
+    ctaSecondary={{ text: 'Contacta con nosotros', href: '/contacto' }}
   />
 
   <CtaBlock
     variant="floating"
     title="Transforma tu negocio con IAORUS"
     ctaPrimary={{ text: 'Solicitar demo →', href: '/demo' }}
-    ctaSecondary={{ text: 'Llamada', href: '/contacto' }}
+    ctaSecondary={{ text: 'Contacta con nosotros', href: '/contacto' }}
   />
 
   <Footer slot="footer" />
