@@ -16,10 +16,21 @@ const activeClass = (path: string) => {
     <a href="/" class="logo"><img src="/assets/images/logo_iaorus_white.png" alt="IAORUS"></a>
     <nav>
       <a href="/"{activeClass('/')}>Inicio</a>
-      <a href="/productos"{activeClass('/productos')}>Productos</a>
+      <div class={"dropdown" + (activeClass('/productos') ? " active" : "")}>
+        <a href="/productos" class="dropbtn">Productos <span class="arrow">▾</span></a>
+        <div class="dropdown-content">
+          <a href="/productos">Ver todos los productos</a>
+          <a href="/producto-erp">IAORUS ERP</a>
+          <a href="/producto-bp360">IAORUS BP360</a>
+          <a href="/producto-gestia">Gest-IA</a>
+          <a href="/producto-iatask">IATask</a>
+          <a href="/producto-apprrhh">APP RRHH</a>
+          <a href="/producto-accesos">Control de Accesos</a>
+          <a href="/producto-web">Desarrollo Web</a>
+        </div>
+      </div>
       <a href="/soluciones"{activeClass('/soluciones')}>Sectores</a>
       <a href="/servicios"{activeClass('/servicios')}>Servicios</a>
-      <a href="/recursos"{activeClass('/recursos')}>Recursos</a>
       <a href="/demo" class="btn btn-demo btn-sm">Solicitar Demo</a>
     </nav>
     <button class="mobile-toggle" aria-label="Menú"><span></span><span></span><span></span></button>

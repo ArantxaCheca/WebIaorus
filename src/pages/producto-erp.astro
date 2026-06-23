@@ -4,16 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 
-const title = 'IAORUS ERP - El centro de operaciones de tu empresa';
-const description = 'Gestiona tu empresa desde un solo lugar: compras, ventas, almacén, finanzas, RRHH, proyectos y CRM.';
+const title = 'IAORUS ERP - Gestiona todo desde una única plataforma';
+const description = 'Gestiona tu empresa desde una sola plataforma: ventas, compras, clientes, finanzas, RRHH, proyectos y más.';
 const currentPage = '/producto-erp';
-const p = { key: 'erp', tag: 'Producto', name: 'IAORUS ERP', desc: 'El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel.', video: 'VIDEO_ID_ERP', thumb: 'thumb-erp', fb: 'ERP', img: 'pexels-kampus-8353815.jpg' };
-const features = [
-  { title: 'Gestión completa', desc: 'Compras, ventas, almacén, finanzas y RRHH' },
-  { title: 'CRM integrado', desc: 'Gestiona clientes y oportunidades de venta' },
-  { title: 'Datos en tiempo real', desc: 'Dashboards con indicadores clave actualizados' },
-  { title: 'Automatización IA', desc: 'Reduce tareas manuales hasta un 70%' }
-];
+const p = { key: 'erp', tag: 'Producto', name: 'IAORUS ERP', desc: 'Gestiona ventas, compras, clientes, finanzas y operaciones desde una única plataforma.', video: 'VIDEO_ID_ERP', thumb: 'thumb-erp', fb: 'ERP', img: 'pexels-kampus-8353815.jpg' };
 const benefits = [
   { title: 'Integración total', desc: 'Todos tus departamentos conectados en una sola plataforma' },
   { title: 'Datos en tiempo real', desc: 'Toma decisiones con información actualizada al instante' },
@@ -21,9 +15,9 @@ const benefits = [
   { title: 'Escalabilidad real', desc: 'Crece sin límites, la plataforma se adapta a ti' }
 ];
 const steps = [
-  { number: '1', title: 'Configuramos', description: 'Adaptamos IAORUS a tus procesos sin que cambies tu forma de trabajar' },
-  { number: '2', title: 'Conectamos', description: 'Integramos todos tus departamentos en una sola plataforma' },
-  { number: '3', title: 'Transformamos', description: 'Empieza a operar con más eficiencia desde el día uno' }
+  { number: '1', title: 'Analizamos tu empresa', description: 'Identificamos procesos, necesidades y áreas de mejora.' },
+  { number: '2', title: 'Configuramos la plataforma', description: 'Adaptamos IAORUS ERP a la forma de trabajar de tu equipo.' },
+  { number: '3', title: 'Empiezas a trabajar con IAORUS', description: 'Tu empresa comienza a gestionar sus procesos desde un entorno más conectado y eficiente.' }
 ];
 const demoHref = `/demo?producto=${p.key}`;
 ---
@@ -53,35 +47,36 @@ const demoHref = `/demo?producto=${p.key}`;
     </div>
   </section>
 
-  <section class="bg-gray">
+  <section class="section--tight">
     <div class="container">
-      <div class="split-grid">
+      <div class="split-grid split-grid--tight">
         <div>
-          <img src={`/assets/images/${p.img}`} alt={`Panel ${p.name}`} class="img-section">
+          <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Plataforma</span>
+          <h2 style="margin-bottom:12px;">Gestiona todo desde una única plataforma</h2>
+          <p style="margin-bottom:24px;">IAORUS ERP centraliza las áreas clave de tu empresa para que puedas trabajar con información conectada, procesos más ágiles y una visión global del negocio.</p>
+          <div class="module-grid">
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Ventas</h4><p>Gestión comercial y facturación.</p></div></div>
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Compras</h4><p>Proveedores, pedidos y stock.</p></div></div>
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Clientes</h4><p>CRM y seguimiento comercial.</p></div></div>
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Finanzas</h4><p>Contabilidad, tesorería y reportes.</p></div></div>
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>RRHH</h4><p>Empleados, nóminas y talento.</p></div></div>
+            <div class="module-card"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Proyectos</h4><p>Planificación y seguimiento.</p></div></div>
+            <div class="module-card module-card-full"><div class="module-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="module-card-body"><h4>Documentación</h4><p>Gestión documental integrada.</p></div></div>
+          </div>
         </div>
         <div>
-          <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Características</span>
-          <h2>Características principales</h2>
-          <div class="landing-benefits" style="grid-template-columns:1fr 1fr;">
-            {features.map(f => (
-              <div class="landing-benefit">
-                <div class="landing-benefit-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F47920" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-                <h4>{f.title}</h4>
-                <p>{f.desc}</p>
-              </div>
-            ))}
-          </div>
+          <img src="/assets/images/p1img1.jpg" alt="Panel IAORUS ERP" class="img-section">
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="bg-gray section--tight">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title" style="margin-bottom:32px;">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Beneficios</span>
-        <h2>¿Por qué {p.name}?</h2>
-        <p>Todo lo que necesitas para gestionar tu empresa, en un solo lugar.</p>
+        <h2 style="margin-bottom:8px;">Menos herramientas. Más control.</h2>
+        <p>Centraliza procesos, conecta equipos y reduce tareas manuales con una solución diseñada para adaptarse a tu empresa.</p>
       </div>
       <div class="landing-benefits">
         {benefits.map(b => (
@@ -99,8 +94,8 @@ const demoHref = `/demo?producto=${p.key}`;
     <div class="container">
       <div class="section-title">
         <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Vídeo</span>
-        <h2>Vídeo demostrativo</h2>
-        <p>Descubre cómo funciona {p.name} en la práctica.</p>
+        <h2>Descubre IAORUS ERP en menos de 90 segundos</h2>
+        <p>Mira cómo centralizar procesos, automatizar tareas y mejorar la productividad de tu empresa desde una única plataforma.</p>
       </div>
       <div class="video-placeholder">
         <div class="vp-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
@@ -129,17 +124,17 @@ const demoHref = `/demo?producto=${p.key}`;
   </section>
 
   <CtaBlock
-    title="¿Listo para transformar tu negocio?"
-    subtitle={`Solicita una demo personalizada y descubre cómo ${p.name} puede impulsar tu empresa.`}
-    ctaPrimary={{ text: 'Solicitar demo gratuita →', href: demoHref }}
+    title="¿Listo para transformar la gestión de tu empresa?"
+    subtitle="Solicita una demo personalizada y descubre cómo IAORUS ERP puede ayudarte a centralizar procesos, ahorrar tiempo y mejorar la toma de decisiones."
+    ctaPrimary={{ text: 'Solicitar demo gratuita', href: demoHref }}
     ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
     variant="landing-cta-section"
   />
 
   <CtaBlock
     variant="floating"
-    title="¿Listo para transformar tu negocio?"
-    ctaPrimary={{ text: 'Solicitar demo →', href: demoHref }}
+    title="¿Listo para transformar la gestión de tu empresa?"
+    ctaPrimary={{ text: 'Solicitar demo gratuita', href: demoHref }}
     ctaSecondary={{ text: 'Contactar', href: '/contacto' }}
   />
 

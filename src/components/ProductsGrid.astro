@@ -13,9 +13,10 @@ export interface Props {
   subtitle?: string;
   products: Product[];
   showSectionHeader?: boolean;
+  highlightProductId?: string;
 }
 
-const { tag = 'Productos', title = 'Todo lo que necesitas en un solo ecosistema', subtitle = 'Módulos inteligentes que funcionan juntos o por separado.', products, showSectionHeader = true } = Astro.props;
+const { tag = 'Productos', title = 'Todo lo que necesitas en un solo ecosistema', subtitle = 'Módulos inteligentes que funcionan juntos o por separado.', products, showSectionHeader = true, highlightProductId } = Astro.props;
 
 const images: Record<string, string> = {
   erp: '/assets/images/IAORUS ERP.jpg',
@@ -39,17 +40,18 @@ const images: Record<string, string> = {
     )}
     <div class="products-grid">
       {products.map(p => (
-        <div class="product-card" onclick={`openProductModal('${p.id}')`}>
+        <div class={"product-card" + (p.id === highlightProductId ? " product-card--highlighted" : "")} onclick={`openProductModal('${p.id}')`}>
           <div class="product-card-img">
             <img src={images[p.id] || images.erp} alt={p.title} loading="lazy" />
           </div>
           <div class="product-card-body">
             <h3>{p.title}</h3>
+            {p.id === highlightProductId && <span class="product-badge">Solución principal</span>}
             <p class="product-desc">{p.description}</p>
             <div class="product-tags">
               {p.tags.map(t => <span class="product-tag">{t}</span>)}
             </div>
-            <a href={`/producto-${p.id}`} class="product-link" onclick="event.stopPropagation();">▶ Ver vídeo</a>
+            <a href={`/producto-${p.id}`} class="product-link" onclick="event.stopPropagation();">▶ Ver demostración</a>
           </div>
         </div>
       ))}

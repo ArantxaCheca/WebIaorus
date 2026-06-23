@@ -14,6 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const dropdown = document.querySelector('.dropdown');
+  const dropbtn = dropdown?.querySelector('.dropbtn');
+  if (dropdown && dropbtn) {
+    dropbtn.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('dropdown--open');
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('dropdown--open');
+      }
+    });
+  }
+
   const header = document.querySelector('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);

@@ -142,11 +142,3 @@ window.showToast = function(message) {
   }, 2500);
 };
 
-window.filterResources = function(category) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  if (event.target) event.target.classList.add('active');
-  document.querySelectorAll('.resource-card').forEach(card => {
-    const cats = card.dataset.category || '';
-    card.style.display = (!category || category === 'all' || cats.split(',').includes(category)) ? 'block' : 'none';
-  });
-};

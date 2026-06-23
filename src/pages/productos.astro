@@ -11,19 +11,19 @@ const description = 'Productos IAORUS: ERP, BP360, Gest-IA, IATask, APP RRHH, Co
 const currentPage = '/productos';
 
 const products = [
-  { id: 'erp', title: 'IAORUS ERP', description: 'El centro de operaciones de tu empresa. Gestiona compras, ventas, almacén, finanzas, RRHH, proyectos y CRM desde un único panel. Todo integrado, todo en tiempo real.', tags: ['Gestión empresarial', 'ERP', 'CRM', 'Integración'], icon: 'erp' },
-  { id: 'bp360', title: 'IAORUS BP360', description: 'La plataforma inteligente para el sector inmobiliario. Centraliza activos, inversores, colaboradores y operaciones. Con web colaborativa y dashboards de IA.', tags: ['Inmobiliario', 'IA', 'Inversiones'], icon: 'bp360' },
-  { id: 'gestia', title: 'Gest-IA', description: 'Olvídate de buscar documentos perdidos. Gest-IA organiza, clasifica y encuentra cualquier expediente en segundos. Con IA que aprende de tu forma de trabajar.', tags: ['Documentos', 'IA', 'Expedientes'], icon: 'gestia' },
-  { id: 'iatask', title: 'IATask', description: 'Controla la producción, las tareas y la asistencia de tu equipo. Planifica, mide y mejora la eficiencia operativa desde una plataforma unificada.', tags: ['Producción', 'Asistencia', 'Tiempos'], icon: 'iatask' },
-  { id: 'apprrhh', title: 'APP RRHH', description: 'Encuentra y retén el mejor talento. Tests, evaluaciones e informes con inteligencia artificial para tomar decisiones informadas sobre tu equipo.', tags: ['RRHH', 'Talento', 'Evaluación'], icon: 'rrhh' },
-  { id: 'accesos', title: 'Control de Accesos', description: 'Protege tus instalaciones con control de accesos inteligente. RFID, biometría y QR integrados con el ERP. Gestión centralizada desde un panel.', tags: ['Seguridad', 'Accesos', 'RFID'], icon: 'accesos' },
-  { id: 'web', title: 'Desarrollo Web', description: 'Tu presencia online profesional. Páginas web corporativas y tiendas online diseñadas para convertir visitantes en clientes.', tags: ['Web', 'E-commerce', 'Diseño'], icon: 'web' }
+  { id: 'erp', title: 'IAORUS ERP', description: 'Gestiona ventas, compras, clientes, finanzas y operaciones desde una única plataforma.', tags: ['ERP', 'CRM', 'Finanzas', 'Operaciones'], icon: 'erp' },
+  { id: 'bp360', title: 'IAORUS BP360', description: 'Planifica objetivos, controla indicadores y toma mejores decisiones con una visión global del negocio.', tags: ['Estrategia', 'KPIs', 'Dirección', 'IA'], icon: 'bp360' },
+  { id: 'gestia', title: 'Gest-IA', description: 'Organiza documentos, expedientes y procesos internos de forma más ágil y centralizada.', tags: ['Documentación', 'IA', 'Expedientes'], icon: 'gestia' },
+  { id: 'iatask', title: 'IATask', description: 'Coordina tareas, producción, incidencias y mantenimiento desde un único entorno operativo.', tags: ['Producción', 'Tareas', 'Incidencias'], icon: 'iatask' },
+  { id: 'apprrhh', title: 'APP RRHH', description: 'Centraliza la gestión de empleados, vacaciones, talento y evaluaciones internas.', tags: ['RRHH', 'Talento', 'Evaluación'], icon: 'rrhh' },
+  { id: 'accesos', title: 'Control de Accesos', description: 'Gestiona presencia, accesos y seguridad de forma sencilla y conectada.', tags: ['Seguridad', 'Presencia', 'RFID'], icon: 'accesos' },
+  { id: 'web', title: 'Desarrollo Web', description: 'Diseñamos webs, ecommerce y soluciones digitales adaptadas a los objetivos de tu negocio.', tags: ['Web', 'Ecommerce', 'Diseño'], icon: 'web' }
 ];
 const problems = [
-  { title: 'Procesos manuales que ralentizan tu operativa', description: 'Automatiza tareas repetitivas y libera a tu equipo para lo que importa.' },
-  { title: 'Sistemas que no se comunican entre sí', description: 'Centraliza toda tu operación en una sola plataforma integrada.' },
-  { title: 'Falta de visibilidad en tiempo real', description: 'Toma decisiones informadas con datos actualizados al instante.' },
-  { title: 'Costes elevados de desarrollo a medida', description: 'Configura sin programar. IAORUS se adapta sin necesidad de grandes inversiones.' }
+  { title: 'Procesos manuales que frenan tu negocio', description: 'Automatiza tareas repetitivas y libera a tu equipo para lo que realmente importa.' },
+  { title: 'Sistemas que no se comunican', description: 'Centraliza ventas, finanzas y operaciones en una sola plataforma integrada.' },
+  { title: 'Falta de visibilidad en tiempo real', description: 'Toma decisiones informadas con datos actualizados al instante desde cualquier lugar.' },
+  { title: 'Costes elevados de desarrollo a medida', description: 'Configura sin programar. IAORUS se adapta a tu negocio sin grandes inversiones.' }
 ];
 const steps = [
   { number: '1', title: 'Se adapta a ti', description: 'Configuramos la plataforma según tus procesos, sin que tengas que cambiar tu forma de trabajar.' },
@@ -47,9 +47,9 @@ const steps = [
   <section>
     <div class="container">
       <div class="section-title" style="margin-bottom:32px;">
-        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Problemas que resolvemos</span>
-        <h2>¿Tu negocio enfrenta estos retos?</h2>
-        <p>Cada producto de IAORUS está diseñado para resolver un problema específico.</p>
+        <span class="section-tag" style="background:rgba(244,121,32,0.15);color:var(--orange);">Por qué IAORUS</span>
+        <h2>¿Por qué las empresas eligen IAORUS?</h2>
+        <p>Resolvemos los problemas que frenan el crecimiento de tu negocio.</p>
       </div>
       <div class="problems-grid" style="margin-bottom:56px;">
         {problems.map(p => (
@@ -59,15 +59,16 @@ const steps = [
           </div>
         ))}
       </div>
-      <ProductsGrid products={products} showSectionHeader={false} />
+      <ProductsGrid products={products} showSectionHeader={false} highlightProductId="erp" />
     </div>
   </section>
 
   <CtaBlock
-    variant="inline"
-    title="¿No sabes por dónde empezar?"
-    subtitle="Te ayudamos a elegir la combinación de productos ideal para tu empresa."
-    ctaPrimary={{ text: 'Hablar con un especialista →', href: '/demo' }}
+    variant="default"
+    title="¿Qué solución necesita tu empresa?"
+    subtitle="Te ayudamos a identificar la herramienta más adecuada según tus procesos, objetivos y nivel de digitalización."
+    ctaPrimary={{ text: 'Solicitar Demo', href: '/demo' }}
+    ctaSecondary={{ text: 'Hablar con un especialista', href: '/contacto' }}
   />
 
   <StepsGrid
