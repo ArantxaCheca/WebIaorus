@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://arantxacheca.github.io',
-  base: '/WebIaorus/',
 
   output: 'static',
 
